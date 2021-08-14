@@ -83,33 +83,40 @@ après mettre le pendentif:
 -- Le miroir
 
   Le grand miroir est un décor dans la chambre.
-      Son aperçu est "Votre grand miroir renvoit votre reflet.".
+      Son aperçu est "Votre grand miroir renvoie votre reflet.".
       Sa description est "Dans le miroir, vous voyez une jeune fille de taille moyenne aux longs cheveux roux et aux yeux verts. Elle semble nerveuse à l'approche du moment d'aller au bal.".
         Interpréter le miroir comme le grand miroir.
-	
-   La porte est une porte au sud de la chambre. Elle est fermée et ouvrable.
+        
+ La porte est une porte au sud de la chambre. Elle est fermée et ouvrable.
  
 avant ouvrir porte:
   si le joueur ne porte ni la robe verte ni la robe bleue :
     dire "Vous ne pouvez pas y aller comme ça. Il faut vous habiller.";
     stopper l'action;
-  fin si.     
+  fin si.
 
+ 
 PARTIE "Trajet".
 -- Sortir
 L'attelage est un lieu au sud de la chambre. 
   Sa description est "Vous montez dans l'attelage.".
-
+  
 
 Grand-Mère est une personne dans l'attelage.
-  Son aperçu est "Vous y rejoignez votre grand-mère qui va vous servir de chaperon pour ce soir et toutes les autres occasions mondaines de la saison. Lady Wolverton, la baronne douairière, Grand-Mère. A ne pas confondre avec Lady Wolverton, née Teresa Mardbury, Mère. Il y a eu un grand débat sur qui allait vous accompagner ce soir. Grand-Mère a estimé que Lady Wolverton était trop laxiste tandis que Mère faisait prévaloir que Lady Wolverton est bien trop rigide. Comme toujours, Grand-Mère a eu le dernier mot.".
+  Son aperçu est "Vous y rejoignez votre grand-mère qui va vous servir de chaperon pour ce soir et toutes les autres occasions mondaines de la saison. Lady Wolverton, la baronne douairière, Grand-Mère. A ne pas confondre avec Lady Wolverton, née Teresa Mardbury, Mère. Il y a eu un grand débat sur qui allait vous accompagner ce soir. Grand-Mère a estimé que Lady Wolverton était trop laxiste tandis que Mère faisait prévaloir que Lady Wolverton est bien trop rigide. Comme toujours, Grand-Mère a eu le dernier mot. [si le joueur porte la robe verte et le pendentif]Après avoir évalué d'un coup d'oeil votre tenue, elle signale au cocher de se mettre en route. [si le joueur porte la robe bleue et le pendentif]{/Il faudra veiller à mieux assortir vos accessoires. Mais nous sommes pressées. A l'avenir, je vous dirai quoi porter puisque vous n'êtes pas capable de prendre cette décision./}[fin si]".
+
+  
+  
+ 
+  
     Son info est "Grand-Mère est ma grand-mère paternelle. Elle a à coeur que je trouve un bon parti, riche, si possible, afin de relever la fortune de la famille. Elle est souvent en conflit avec Mère.".
-    Sa réaction est "Tiens-toi droite et ne parle pas trop.".
+    Sa réaction est "{/Tiens-toi droite et ne parle pas trop./}".
+   
     après danser avec Grand-Mère:
-      dire "merci pour cette danse.".
+      dire "{/Merci pour cette danse./}".
       
   
-    
+  La portière est une porte au sud de l'attelage.  Elle est fermée et ouvrable.
     
 PARTIE "Bal".
 
@@ -126,23 +133,33 @@ Père est une personne.
 
 
 -- La salle
-La salle est un lieu à l'extérieur de l'attelage.
+La salle est un lieu au sud de l'attelage.
 Sa description est "Tout le gratin de la ville se presse dans la salle de bal. Vous avez un moment de tétanie avant de vous jeter dans la mêlée.".
+
+après ouvrir la portière :
+dire "La portière est ouverte.";
+si le joueur porte la robe verte et le collier, changer la relationWM augmente de 1;
+si le joueur porte la robe verte et le pendentif, changer la relationWM augmente de 3;
+si le joueur porte la robe bleue et le pendentif, changer la relationWM diminue de 3.
+
+
+
+
 
 CHAPITRE "Violet Brightenberry".
 Violet Brightenberry est une personne dans la salle.
   Son info est "Violet est probablement ma meilleure amie. Au moins, j'aurai une alliée dans la place ce soir.".
 
       Son aperçu est "Miss Violet Brightenberry, votre amie de toujours, aide sa mère à accueillir les invités.".
-        Sa réaction est "Je suis ravie que vous soyez là ce soir. A nous deux, on va conquérir cette soirée. Soyez prêts, messieurs!".
-        Sa réaction concernant David Sallister est "Il est très bel homme, vous ne trouvez pas? Dommage qu'il ne soit pas plus fortuné. Il paraît qu'il laissera sa femme travailler en dehors de la maison. Ce n'est pas très convenable. Ma mère me tuerait si je l'envisageais. Ne lui dites rien.";
+        Sa réaction est "{/Je suis ravie que vous soyez là ce soir. A nous deux, on va conquérir cette soirée. Soyez prêts, messieurs!/}".
+        Sa réaction concernant David Sallister est "{/Il est très bel homme, vous ne trouvez pas? Dommage qu'il ne soit pas plus fortuné. Il paraît qu'il laissera sa femme travailler en dehors de la maison. Ce n'est pas très convenable. Ma mère me tuerait si je l'envisageais. Ne lui dites rien./}";
         changer l'historique contient "pauvre".
-        Sa réaction concernant George Fullers est "J'ai eu du mal à lui échapper. Il est d'un ennui... Il ne parle que de jardinage. Il a conseillé Maman pour le nouveau dessin de nos bosquets, il était intarissable. Vous lui parlez à vos risques et périls, ma chère.";
+        Sa réaction concernant George Fullers est "{/J'ai eu du mal à lui échapper. Il est d'un ennui... Il ne parle que de jardinage. Il a conseillé Maman pour le nouveau dessin de nos bosquets, il était intarissable. Vous lui parlez à vos risques et périls, ma chère./}";
         changer l'historique contient "jardinage".
         
         
         
-          Son attitude est "Je vous remercie de votre attention.".
+          Son attitude est "{/Je vous remercie de votre attention./}".
           
             Interpréter Violet, Miss Brightenberry ou Miss Violet comme Violet Brightenberry.
           
@@ -150,25 +167,30 @@ CHAPITRE "Lady Brightenberry".
 Lady Brightenberry est une personne dans la salle.
   Son aperçu est "Votre hôte, Lady Brightenberry, se trouve à l'entrée de la salle pour vous souhaiter la bienvenue.".
     Sa réaction est "[1ère fois]Soyez les bienvenues. Lady Wolverton, quelle joie de vous revoir. Et Miss Wolverton. J'espère que vous aimerez cette réunion amicale sans chichis. [puis]J'espère que vous vous amusez. Avez-vous eu l'occasion de goûter les hors d'oeuvres? Ils sont divins.[fin choix]".
-      Sa réaction concernant un sujet inconnu est "Je suis d'accord avec vous.".
+      Sa réaction concernant un sujet inconnu est "{/Je suis d'accord avec vous./}".
       Son info est "Lady Brightenberry laisse une grande liberté à Violet. Ce n'est pas mon cas, avec Mère et Grand-Mère pour me surveiller...".
       
          après danser avec Lady Brightenberry:
-         dire "Merci pour cette danse...inattendue.".
-          Son attitude est "Vous me flattez, mais ce n'est pas le lieu ou le moment. Je dois m'occuper de mes invités.".
+         dire "{/Merci pour cette danse...inattendue./}".
+          Son attitude est "{/Vous me flattez, mais ce n'est pas le lieu ou le moment. Je dois m'occuper de mes invités./}".
 CHAPITRE "Grand-Mère".
 Grand-Mère est une personne dans la salle.
 Son aperçu est "Grand-Mère échange des platitudes avec Lady Brightenberry.".
-Sa description est "Il est entendu avec votre mère que je vous laisse choisir vos danses et conversations ce soir, mais souvenez-vous: je suis toujours là pour vous guider dans les méandres de la bonne société. N'oubliez pas pourquoi nous sommes ici: il vous faut décrocher un bon parti qui permettra de relever la fortune de notre famille. Nos espoirs reposent sur cette union. Choisissez avec discernement vos actions de ce soir.".
-Sa réaction concernant un sujet inconnu est "Si je ne le sais pas c'est que ce n'est pas très important.".
-Sa réaction concernant Lady Brightenberry est "C'est une dame bien comme il faut.".
-Sa réaction concernant Violet Brightenberry est "C'est une jeune fille bien élevée. La côtoyer ne peut vous faire que du bien.".
-Sa réaction concernant David Sallister est "C'est un parti peu ambitieux. Ses états de service lui font honneur. Son manque de fortune le disqualifie complètement. Il est certes séduisant (oui, j'ai des yeux pour voir), mais ce n'est pas ce qui compte ici. Je crois savoir qu'il veut une grande famille, ce qui réduirait d'autant le train de vie sur la solde d'un simple capitaine.";
+Sa description est "{/Il est entendu avec votre mère que je vous laisse choisir vos danses et conversations ce soir, mais souvenez-vous: je suis toujours là pour vous guider dans les méandres de la bonne société. N'oubliez pas pourquoi nous sommes ici: il vous faut décrocher un bon parti qui permettra de relever la fortune de notre famille. Nos espoirs reposent sur cette union. Choisissez avec discernement vos actions de ce soir./}".
+Sa réaction concernant un sujet inconnu est "{/Si je ne le sais pas c'est que ce n'est pas très important./}".
+Sa réaction concernant Lady Brightenberry est "{/C'est une dame bien comme il faut./}".
+Sa réaction concernant Violet Brightenberry est "{/C'est une jeune fille bien élevée. La côtoyer ne peut vous faire que du bien./}".
+Sa réaction concernant David Sallister est "{/C'est un parti peu ambitieux. Ses états de service lui font honneur. Son manque de fortune le disqualifie complètement. Il est certes séduisant (oui, j'ai des yeux pour voir), mais ce n'est pas ce qui compte ici. Je crois savoir qu'il veut une grande famille, ce qui réduirait d'autant le train de vie sur la solde d'un simple capitaine./}";
 changer l'historique contient "pauvre".
-Sa réaction concernant George Fullers est "C'est un parti très prometteur. Je t'invite à te rapprocher de lui. Il possède fortune ET standing. Que demander de plus?";
+
+Sa réaction concernant George Fullers est "{/C'est un parti très prometteur. Je t'invite à te rapprocher de lui. Il possède fortune ET standing. Que demander de plus?/}";
 changer l'historique contient "riche".
-Sa réaction concernant Francis Trenton est "C'est un bon parti. Il est titré et sa fortune semble bien établie. On dit de lui que c'est un parfait gentleman. Ses idées sur le mariage le prouvent.".
-Sa réaction concernant William Montgomery est "De nombreuses donzelles autour de lui mais aucune n'a réussi à lui mettre le grappin dessus. Il peut faire un bon parti, même si sa fortune n'est pas très importante et qu'il n'est que peu titré. Un troisième choix donc.".
+
+Sa réaction concernant Francis Trenton est "{/C'est un bon parti. Il est titré et sa fortune semble bien établie. On dit de lui que c'est un parfait gentleman. Ses idées sur le mariage le prouvent./}".
+Sa réaction concernant William Montgomery est "{/De nombreuses donzelles autour de lui mais aucune n'a réussi à lui mettre le grappin dessus. Il peut faire un bon parti, même si sa fortune n'est pas très importante et qu'il n'est que peu titré. Un troisième choix donc./}".
+
+
+
   
             
 CHAPITRE "Francis Trenton".
@@ -182,35 +204,35 @@ Il est mariable.
  
      
     après charmer Francis Trenton:
-    dire "J'apprécie votre compagnie, Miss Wolverton.";
+    dire "{/J'apprécie votre compagnie, Miss Wolverton./}";
     changer la relationAT augmente de 1;
     changer la relationGF diminue de 1.
     
    
       après danser avec Francis Trenton:
-      dire "Merci pour cette danse, Miss Wolverton.";
+      dire "{/Merci pour cette danse, Miss Wolverton./}";
       changer nbdansesAT augmente de 1;
       changer la relationGF diminue de 1;
       si ragotmètre vaut 0, changer la relationAT augmente de 1;
       si nbdansesAT atteint 3, changer ragotmètre augmente de 1.
    
         après parler avec Francis Trenton:
-        dire "Merci pour ce moment, Miss Wolverton.";
+        dire "{/Merci pour ce moment, Miss Wolverton./}";
         changer la relationAT augmente de 1;
         changer la relationGF diminue de 1.
     
-        Sa réaction concernant les courses est "Le Derby? Ma foi j'ai plutôt misé sur le bon cheval, je dois dire.";
+        Sa réaction concernant les courses est "{/Le Derby? Ma foi j'ai plutôt misé sur le bon cheval, je dois dire./}";
             changer relationAT augmente de 2.
             
-           Sa réaction concernant les chevaux est "Il n'y a rien que j'aime plus que de monter un cheval tôt le matin pour une longue randonnée sur mes terres.";
+           Sa réaction concernant les chevaux est "{/Il n'y a rien que j'aime plus que de monter un cheval tôt le matin pour une longue randonnée sur mes terres./}";
               changer relationAT augmente de 2.
              
-            Sa réaction concernant les dettes ou la dette est "Je ne vois pas de quoi vous voulez parler. Changeons de sujet, voulez-vous?";
+            Sa réaction concernant les dettes ou la dette est "{/Je ne vois pas de quoi vous voulez parler. Changeons de sujet, voulez-vous?/}";
               changer relationAT diminue de 1.
             
-            Sa réaction concernant le mariage, la femme, sa femme, son épouse ou les femmes est "Ce qui compte le plus pour moi est que mon épouse soit heureuse. Pour cela, je la protégerai comme doit le faire tout gentleman qui se respecte.".
+            Sa réaction concernant le mariage, la femme, sa femme, son épouse ou les femmes est "{/Ce qui compte le plus pour moi est que mon épouse soit heureuse. Pour cela, je la protégerai comme doit le faire tout gentleman qui se respecte./}".
             
-            Sa réaction concernant un sujet inconnu est "J'ignore tout de cela.".
+            Sa réaction concernant un sujet inconnu est "{/J'ignore tout de cela./}".
             
             Son info est "Je le connais peu mais Felicity peut probablement me parler de son frère.".
               
@@ -218,12 +240,12 @@ Il est mariable.
           
       après parler avec Francis Trenton, danser avec Francis Trenton, parler de chevaux avec Francis Trenton ou charmer Francis Trenton:
         si ragotmètre atteint 7,
-        dire "Grand-Mère vient vous chercher et vous ramène à la maison, furieuse de votre attitude désinvolte et vulgaire. Vous n'êtes qu'une dévergondée, mademoiselle. Une dévergondée qui vient de faire honte au nom même qu'elle porte.";
+        dire "Grand-Mère vient vous chercher et vous ramène à la maison, furieuse de votre attitude désinvolte et vulgaire. {/Vous n'êtes qu'une dévergondée, mademoiselle. Une dévergondée qui vient de faire honte au nom même qu'elle porte./}";
         terminer le jeu.
         
         après parler avec Francis Trenton, danser avec Francis Trenton, parler de chevaux avec Francis Trenton ou charmer Francis Trenton:
         si relationAT atteint 7,
-        dire "voulez-vous m'épouser? {/accepter/}/{/refuser/}";
+        dire "{/Voulez-vous m'épouser?/} {/accepter/}/{/refuser/}";
         changer historique contient "demande faite";
         changer historique contient "demande faite par Francis Trenton";
         changer historique contient "Francis Trenton".
@@ -240,7 +262,7 @@ le joueur peut accepter:
   
 le joueur peut refuser:
   si l’historique contient "demande faite":
-    dire "« Hélas, vous me voyez bien marri de votre refus. Je vous souhaite le meilleur, Miss Wolverton. »";
+    dire "« {/Hélas, vous me voyez bien marri de votre refus. Je vous souhaite le meilleur, Miss Wolverton./} »";
     changer historique ne contient plus "demande faite";
   sinon
     dire "Refuser ? Je n’ai pas reçu de proposition…";
@@ -251,12 +273,12 @@ Felicity Trenton est une personne dans la salle.
 Son aperçu est "Felicity Trenton est une jeune fille que vous connaissez bien.".
 
 
-Sa réaction concernant un sujet inconnu est "J'ignore tout de cela.".
+Sa réaction concernant un sujet inconnu est "{/J'ignore tout de cela./}".
 Sa réaction est "Vous échangez quelques banalités.".
-Sa réaction concernant Francis Trenton est "Mon frère est un parfait gentleman. Peut-être pas une personnalité mondaine mais qui il épousera pourra compter sur lui. Il est passionné de chevaux et de courses. Evoquer cela est une façon certaine d'attirer son attention.";
+Sa réaction concernant Francis Trenton est "{/Mon frère est un parfait gentleman. Peut-être pas une personnalité mondaine mais qui il épousera pourra compter sur lui. Il est passionné de chevaux et de courses. Evoquer cela est une façon certaine d'attirer son attention./}";
   changer l'historique contient "courses".
   
-Sa réaction concernant William Montgomery est "Il se murmure que sir William n'est pas le gentleman qu'il paraît. Il se dit qu'il aurait eu un enfant caché avec Susan, une couturière de ma modiste. Elle semblait avoir pris du poids puis a été licenciée. Elle est désormais sans le sou puisqu'il a refusé de subvenir à ses besoins et à ceux de l'enfant.";
+Sa réaction concernant William Montgomery est "{/Il se murmure que sir William n'est pas le gentleman qu'il paraît. Il se dit qu'il aurait eu un enfant caché avec Susan, une couturière de ma modiste. Elle semblait avoir pris du poids puis a été licenciée. Elle est désormais sans le sou puisqu'il a refusé de subvenir à ses besoins et à ceux de l'enfant./}";
   changer l'historique contient "enfant".
 
 Son info est "Felicity est une de mes amies proches. Toutefois, il ne faut pas que j'oublie qu'elle aussi cherche à se marier.".
@@ -273,17 +295,17 @@ Il est mariable.
  Son nbdansesGF vaut 0.
   Son aperçu est "Le jeune comte Fullers, George de son prénom, se trouve en retrait en train de siroter un verre de Champagne.".
      Sa réaction est "Vous échangez longuement sur divers sujets.".
-     Son info est "Je connais peu cette personne.Grand-Mère sait peut-être quelque chose à son sujet.".
+     Son info est "Je connais peu cette personne. Grand-Mère sait peut-être quelque chose à son sujet.".
      Interpréter comte Fullers, Fullers et George comme George Fullers.
      
      Sa description est "Il est richement vêtu et arbore des boutons de manchettes en diamant.".
      
     après charmer George Fullers:
-    dire "J'apprécie votre compagnie, Miss Wolverton.";
+    dire "{/J'apprécie votre compagnie, Miss Wolverton./}";
     changer la relationGF augmente de 1.
    
       après danser avec George Fullers:
-      dire "Merci pour cette danse, Miss Wolverton.";
+      dire "{/Merci pour cette danse, Miss Wolverton./}";
       changer nbdansesGF augmente de 1;
       si ragotmètre vaut 0, changer la relationGF augmente de 1;
       si nbdansesGF atteint 3, changer ragotmètre augmente de 1.
@@ -291,25 +313,25 @@ Il est mariable.
         après parler avec George Fullers:
         changer la relationGF augmente de 1.
     
-              Sa réaction concernant le jardinage est "Le jardinage est une science voyez-vous. Une science subtile que seuls certains peuvent espérer en connaître tous les secrets. Il se trouve que je suis l'une de ces personnes.";
+              Sa réaction concernant le jardinage est "{/Le jardinage est une science voyez-vous. Une science subtile que seuls certains peuvent espérer en connaître tous les secrets. Il se trouve que je suis l'une de ces personnes./}";
             changer relationGF augmente de 2.
            
-           Sa réaction concernant George Fullers est "Sans mentir, je suis l'une des personnes les plus intéressantes de cette soirée. Notre hôtesse est bien gentille mais la qualité des invités laisse à désirer. Vous n'êtes pas comprise dans le lot, bien sûr.";
+           Sa réaction concernant George Fullers est "{/Sans mentir, je suis l'une des personnes les plus intéressantes de cette soirée. Notre hôtesse est bien gentille mais la qualité des invités laisse à désirer. Vous n'êtes pas comprise dans le lot, bien sûr./}";
               changer relationGF augmente de 2.
               
-            Sa réaction concernant le mariage, la femme, sa femme, son épouse ou les femmes est "Ma femme sera libre tant qu'elle ne provoque pas de scandale. Une femme doit être obéissante à son mari et doit le mettre en valeur en toutes circonstances.".
+            Sa réaction concernant le mariage, la femme, sa femme, son épouse ou les femmes est "{/Ma femme sera libre tant qu'elle ne provoque pas de scandale. Une femme doit être obéissante à son mari et doit le mettre en valeur en toutes circonstances./}".
             
             
               
                
       après parler avec George Fullers, danser avec George Fullers, parler de George Fullers avec George Fullers, parler de jardinage avec George Fullers ou charmer George Fullers:
       si ragotmètre atteint 7,
-        dire "Grand-Mère vient vous chercher et vous ramène à la maison, furieuse de votre attitude désinvolte et vulgaire. Vous n'êtes qu'une dévergondée, mademoiselle. Une dévergondée qui vient de faire honte au nom même que vous portez.";
+        dire "Grand-Mère vient vous chercher et vous ramène à la maison, furieuse de votre attitude désinvolte et vulgaire. {/Vous n'êtes qu'une dévergondée, mademoiselle. Une dévergondée qui vient de faire honte au nom même que vous portez./}";
         terminer le jeu.
         
        après parler avec George Fullers, danser avec George Fullers, parler de George Fullers avec George Fullers, parler de jardinage avec George Fullers ou charmer George Fullers:
         si relationGF atteint 7,  
-        dire "voulez-vous m'épouser? {/accepter/}/{/refuser/}";
+        dire "{/Voulez-vous m'épouser?/} {/accepter/}/{/refuser/}";
         changer historique contient "demande faite";
         changer historique contient "demande faite par George Fullers";
         changer historique contient "George Fullers".
@@ -331,12 +353,12 @@ Il est mariable.
      
      
     après charmer David Sallister:
-      dire "J'apprécie votre compagnie, Miss Wolverton.";
+      dire "{/J'apprécie votre compagnie, Miss Wolverton./}";
     changer la relationAS augmente de 2;
     changer la relationGF diminue de 1.
    
       après danser avec David Sallister:
-      dire "Merci pour cette danse, Miss Wolverton.";
+      dire "{/Merci pour cette danse, Miss Wolverton./}";
       changer nbdansesAS augmente de 1;
       changer la relationGF diminue de 1;
       si ragotmètre vaut 0, changer la relationAS augmente de 1;
@@ -348,22 +370,22 @@ Il est mariable.
    
    
     
-              Sa réaction concernant la stratégie est "La stratégie est l'un de mes sujets favori. Voyez-vous, la conduite de la guerre est un art que personne ne peut prétendre maîtriser. Il faut toujours remettre en question ce que l'on croit savoir, car l'ennemi vous surprendra toujours. Il n'y a qu'à voir les méfaits du boucher Bonaparte sur toute l'Europe. Heureusement, Wellington est là.";
-            changer relationAS augmente de 2;
+              Sa réaction concernant la stratégie est "{/La stratégie est l'un de mes sujets favori. Voyez-vous, la conduite de la guerre est un art que personne ne peut prétendre maîtriser. Il faut toujours remettre en question ce que l'on croit savoir, car l'ennemi vous surprendra toujours. Il n'y a qu'à voir les méfaits du boucher Bonaparte sur toute l'Europe. Heureusement, Wellington est là./}";
+            changer la relationAS augmente de 2;
             changer la relationGF diminue de 1.
            
-        			  Sa réaction concernant le mariage, la femme, sa femme, son épouse, la famille ou les femmes est "Mon affectation à la garde de notre souverain me laisse peu de temps pour tenir une maison ou un domaine. Mon épouse aura donc la charge complète de la maison. Je vois cette relation comme un partenariat, les deux époux s'épaulant l'un l'autre dans la gestion de la famille. J'entends avoir une grande famille, voyez-vous.".
+        			  Sa réaction concernant le mariage, la femme, sa femme, son épouse, la famille ou les femmes est "{/Mon affectation à la garde de notre souverain me laisse peu de temps pour tenir une maison ou un domaine. Mon épouse aura donc la charge complète de la maison. Je vois cette relation comme un partenariat, les deux époux s'épaulant l'un l'autre dans la gestion de la famille. J'entends avoir une grande famille, voyez-vous./}".
         			 
-        			 Sa réaction concernant un sujet inconnu est "J'ignore tout de cela, mais je puis me renseigner.".
+        			 Sa réaction concernant un sujet inconnu est "{/J'ignore tout de cela, mais je puis me renseigner./}".
                
       après parler avec David Sallister, danser avec David Sallister, parler de stratégie avec David Sallister ou charmer David Sallister:
        si ragotmètre atteint 7,
-        dire "Grand-Mère vient vous chercher et vous ramène à la maison, furieuse de votre attitude désinvolte et vulgaire. Vous n'êtes qu'une dévergondée, mademoiselle. Une dévergondée qui vient de faire honte au nom même que vous portez.";
+        dire "Grand-Mère vient vous chercher et vous ramène à la maison, furieuse de votre attitude désinvolte et vulgaire. {/Vous n'êtes qu'une dévergondée, mademoiselle. Une dévergondée qui vient de faire honte au nom même que vous portez./}";
         terminer le jeu.
         
         après parler avec David Sallister, danser avec David Sallister, parler de stratégie avec David Sallister ou charmer David Sallister:
         si relationAS atteint 7,  
-        dire "voulez-vous m'épouser? {/accepter/}/{/refuser/}";
+        dire "{/Voulez-vous m'épouser?/} {/accepter/}/{/refuser/}";
         changer historique contient "demande faite";
         changer historique contient "demande faite par David Sallister";
         changer historique contient "David Sallister".
@@ -384,12 +406,12 @@ Il est mariable.
      
      
     après charmer William Montgomery:
-      dire "J'apprécie beaucoup votre compagnie, Miss Wolverton.";
+      dire "{/J'apprécie beaucoup votre compagnie, Miss Wolverton./}";
     changer la relationWM augmente de 2;
     changer la relationGF diminue de 1.
    
       après danser avec William Montgomery:
-      dire "Merci pour cette danse, Miss Wolverton.";
+      dire "{/Merci pour cette danse, Miss Wolverton./}";
       changer nbdansesWM augmente de 1;
       changer la relationGF diminue de 1;
       si ragotmètre vaut 0, changer la relationWM augmente de 1;
@@ -401,50 +423,53 @@ Il est mariable.
    
    
     
-              Sa réaction concernant la mode est "Il y a beaucoup à déduire de la manière dont se vêt une personne de qualité. De manière inconsciente, elle exprime qui elle est, ce qui compte pour elle. Je n'ai que peu de respect pour quelqu'un qui a les moyens mais ne suit pas la mode du moment. C'est comme un pied de nez à toutes les conventions sociales de notre milieu. Mais cela nous procure l'occasion de médire les uns des autres, alors ce n'est pas si grave.";
-            changer relationWM augmente de 2;
+              Sa réaction concernant la mode est "{/Il y a beaucoup à déduire de la manière dont se vêt une personne de qualité. De manière inconsciente, elle exprime qui elle est, ce qui compte pour elle. Je n'ai que peu de respect pour quelqu'un qui a les moyens mais ne suit pas la mode du moment. C'est comme un pied de nez à toutes les conventions sociales de notre milieu. Mais cela nous procure l'occasion de médire les uns des autres, alors ce n'est pas si grave. [si le joueur porte la robe verte et le pendentif]Fort heureusement, vous faites preuve d'un oeil acéré pour ce qui touche à la parure./} [si le joueur porte la robe bleue et le pendentif]Il regarde votre tenue d'un air entendu.[fin si]";
+              changer relationWM augmente de 2;
             changer la relationGF diminue de 1.
+            
            
-           Sa réaction concernant Lady Brightenberry est "Notre hôte est la plus délicieuse des hôtesses. M'est avis que sa fille ne restera pas longtemps sur le marché du mariage.";
+           Sa réaction concernant Lady Brightenberry est "{/Notre hôte est la plus délicieuse des hôtesses. M'est avis que sa fille ne restera pas longtemps sur le marché du mariage./}";
               changer relationWM augmente de 1;
               changer la relationGF diminue de 1.
               
-              Sa réaction concernant Violet Brightenberry est "Une charmante jeune fille. Un parti idéal pour qui n'aime pas être contredit par son épouse, ou que celle-ci ait ses propres intérêts à coeur.";
+              Sa réaction concernant Violet Brightenberry est "{/Une charmante jeune fille. Un parti idéal pour qui n'aime pas être contredit par son épouse, ou que celle-ci ait ses propres intérêts à coeur./}";
                changer relationWM augmente de 1;
                changer la relationGF diminue de 1.
                
-               Sa réaction concernant David Sallister est "Le capitaine? Il est plaisant à regarder, n'est-ce pas? Malheureusement pour vous, ce serait une mésalliance, il n'est ni titré ni riche.";
+               Sa réaction concernant David Sallister est "{/Le capitaine? Il est plaisant à regarder, n'est-ce pas? Malheureusement pour vous, ce serait une mésalliance, il n'est ni titré ni riche./}";
                   changer relationWM augmente de 1;
                   changer la relationGF diminue de 1;
                   changer l'historique contient "pauvre".
               
-              Sa réaction concernant George Fullers est "A part lui-même et le jardinage, notre cher comte n'aime parler de rien. Ne le lancez pas sur un de ces sujets, il est intarissable et d'un ennui mortel.";
+              Sa réaction concernant George Fullers est "{/A part lui-même et le jardinage, notre cher comte n'aime parler de rien. Ne le lancez pas sur un de ces sujets, il est intarissable et d'un ennui mortel./}";
                changer relationWM augmente de 1;
                changer la relationGF augmente de 1;
                changer l'historique contient "égocentrique".
               
-              Sa réaction concernant Francis Trenton est "Un vicomte, voilà qui est intéressant n'est-ce pas? Surtout si on aime l'ennui d'un parfait gentleman tel que le rêve tous les chaperons. Oh et aussi si vous aimez une bourse qui se vide plus vite qu'elle ne se remplit.";
+              Sa réaction concernant Francis Trenton est "{/Un vicomte, voilà qui est intéressant n'est-ce pas? Surtout si on aime l'ennui d'un parfait gentleman tel que le rêve tous les chaperons. Oh et aussi si vous aimez une bourse qui se vide plus vite qu'elle ne se remplit./}";
                changer relationWM augmente de 1;
                changer la relationGF diminue de 1;
                changer l'historique contient "dettes".
                
                
-            Sa réaction concernant Susan ou enfant est "Je ne connais pas cette personne. Oh! quelqu'un m'appelle, veuillez m'excuser.";
+            Sa réaction concernant Susan ou enfant est "{/Je ne connais pas cette personne. Oh! quelqu'un m'appelle, veuillez m'excuser./}";
               changer relationWM diminue de 1.
               
               
-			  Sa réaction concernant le mariage, la femme, sa femme, son épouse ou les femmes est "Si je me marie, mon épouse devra assurer une présence lors de nombreuses soirées mondaines. Elle sera en charge de la maisonnée. Oh il est nécessaire qu'elle ait un fort caractère pour ne pas se faire marcher sur les pieds par ma mère, qui résidera avec nous.".
+			  Sa réaction concernant le mariage, la femme, sa femme, son épouse ou les femmes est "{/Si je me marie, mon épouse devra assurer une présence lors de nombreuses soirées mondaines. Elle sera en charge de la maisonnée. Oh il est nécessaire qu'elle ait un fort caractère pour ne pas se faire marcher sur les pieds par ma mère, qui résidera avec nous./}".
 			  
-			  Sa réaction concernant un sujet inconnu est "J'ignore peu de choses, mais cela en fait partie.".
+			  Sa réaction concernant un sujet inconnu est "{/J'ignore peu de choses, mais cela en fait partie./}".
+			  
+			
                
       après parler avec William Montgomery, danser avec William Montgomery, parler de Francis Trenton, Violet Brightenberry, Albert Sallister, Lady Brightenberry, la mode ou George Fullers avec William Montgomery ou charmer William Montgomery:
       si ragotmètre atteint 7,
-        dire "Grand-Mère vient vous chercher et vous ramène à la maison, furieuse de votre attitude désinvolte et vulgaire. Vous n'êtes qu'une dévergondée, mademoiselle. Une dévergondée qui vient de faire honte au nom même que vous portez.";
+        dire "Grand-Mère vient vous chercher et vous ramène à la maison, furieuse de votre attitude désinvolte et vulgaire. {/Vous n'êtes qu'une dévergondée, mademoiselle. Une dévergondée qui vient de faire honte au nom même que vous portez./}";
         terminer le jeu.
         
         après parler avec William Montgomery, danser avec William Montgomery, parler de Francis Trenton, Violet Brightenberry, Albert Sallister, Lady Brightenberry, la mode ou George Fullers avec William Montgomery ou charmer William Montgomery:
         si relationWM atteint 7,  
-        dire "voulez-vous m'épouser? {/accepter/}/{/refuser/}";
+        dire "{/Voulez-vous m'épouser?/} {/accepter/}/{/refuser/}";
         changer historique contient "demande faite";
         changer historique contient "demande faite par William Montgomery";
         changer historique contient "William Montgomery".
@@ -454,30 +479,30 @@ CHAPITRE "Eugenia Philipps".
 Eugenia Philipps est une personne dans la salle.
 Son aperçu est "Une belle jeune femme attire de nombreux regards alors qu'elle quitte la piste de danse. Il s'agit de la vicomtesse Eugenia Philipps.".
 Sa description est "Devenue récemment veuve, c'est la première fois que Lady Philipps reparaît en société sa période de deuil étant achevée.".
-Sa réaction concernant un sujet inconnu est "Cela ne m'intéresse guère.".
-Sa réaction concernant David Sallister est "Il aime la stratégie. C'est un ancien camarade de régiment de feu mon mari. Il est très ambitieux. Cela ne m'étonnerait pas qu'il devienne colonel un jour.";
+Sa réaction concernant un sujet inconnu est "{/Cela ne m'intéresse guère./}".
+Sa réaction concernant David Sallister est "{/Il aime la stratégie. C'est un ancien camarade de régiment de feu mon mari. Il est très ambitieux. Cela ne m'étonnerait pas qu'il devienne colonel un jour./}";
   changer l'historique contient "stratégie".
   
-Sa réaction concernant Francis Trenton est "Un bon gentleman paie ses dettes. J'ai le regret de vous dire que le vicomte Trenton n'est pas un gentleman. Il a des dettes. Il me doit de l'argent, parié avec mon défunt mari aux courses de chevaux.";
+Sa réaction concernant Francis Trenton est "{/Un bon gentleman paie ses dettes. J'ai le regret de vous dire que le vicomte Trenton n'est pas un gentleman. Il a des dettes. Il me doit de l'argent, parié avec mon défunt mari aux courses de chevaux./}";
   changer l'historique contient "dettes".
 
 Sa réaction est "Vous échangez des banalités.".
 
-Son info est "Je connais peu cette personne.".
+Son info est "{/Je connais peu cette personne./}".
 Interpréter Lady Philipps, Lady Eugenia, Eugenia ou vicomtesse Philipps comme Eugenia Philipps.
 
 
 CHAPITRE "Alexandra Montgomery".
 Alexandra Montgomery est une personne dans la salle.
 Son aperçu est "Parmi un groupe de jeunes filles un peu bruyantes, vous reconnaissez Alexandra Montgomery, la cousine de sir William Montgomery.".
-Sa réaction concernant William Montgomery est "William est LA référence pour tout ce qui touche à la mode. Il fait preuve d'un goût exquis en la matière. Oh, et si vous voulez tout savoir sur tout le monde, c'est à lui qu'il faut parler. Il connaît les travers de chacun et ne rechigne pas à les partager. Il paraît qu'il cherche à se marier, mais ma tante n'y croit plus. Entre nous, vu comment il parle de sa future épouse, je pense que ce sera un mariage compliqué.";
+Sa réaction concernant William Montgomery est "{/William est LA référence pour tout ce qui touche à la mode. Il fait preuve d'un goût exquis en la matière. Oh, et si vous voulez tout savoir sur tout le monde, c'est à lui qu'il faut parler. Il connaît les travers de chacun et ne rechigne pas à les partager. Il paraît qu'il cherche à se marier, mais ma tante n'y croit plus. Entre nous, vu comment il parle de sa future épouse, je pense que ce sera un mariage compliqué./}";
   changer l'historique contient "mode".
 
 Sa réaction est "Vous échangez des banalités.".
 
-Sa réaction concernant un sujet inconnu est "J'ignore tout de cela.".
+Sa réaction concernant un sujet inconnu est "{/J'ignore tout de cela./}".
 
-Son info est "Je connais peu cette personne.".
+Son info est "{/Je connais peu cette personne./}".
 
 Interpréter Alexandra ou Miss Montgomery comme Alexandra Montgomery.
 
@@ -581,13 +606,13 @@ exécuter afficher ceci:
       {e}- {-interroger {/couturier/} concernant {/tissu/}-} : faire parler un personnage concernant un sujet spécifique
       {e}- {-ouvrir {/porte/} avec {/clé dorée/}-} : ouvrir la porte à l’aide de la clé dorée";
   sinonsi ceci est l’inventaire:
-    dire "{n}{n}Votre inventaire [si l’inventaire contient un objet]contient : [lister objets inventaire][sinon]est vide.[fin si]";
-    dire "{_Relations_}: 
+    dire "{n}{n}Votre inventaire [si l’inventaire contient un objet]contient : [lister objets inventaire][sinon]est vide. [fin si]";
+    dire "{n}{_Relations_}: 
     Relation avec George Fullers: [c relationGF]
     Relation avec William Montgomery: [c relationWM]
     Relation avec David Sallister: [c relationAS]
     Relation avec Francis Trenton: [c relationAT]
-    {_Informations_}:";
+    {n}{_Informations_}:";
     si l'historique contient "jardinage", dire "George Fullers aime le jardinage.";
     si l'historique contient "riche", dire "George Fullers est riche.";
     si l'historique contient "égocentrique", dire "George Fullers est égocentrique.";
