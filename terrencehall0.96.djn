@@ -86,11 +86,18 @@ après mettre le pendentif:
       Son aperçu est "Votre grand miroir renvoit votre reflet.".
       Sa description est "Dans le miroir, vous voyez une jeune fille de taille moyenne aux longs cheveux roux et aux yeux verts. Elle semble nerveuse à l'approche du moment d'aller au bal.".
         Interpréter le miroir comme le grand miroir.
-        
+	
+   La porte est une porte au sud de la chambre. Elle est fermée et ouvrable.
+ 
+avant ouvrir porte:
+  si le joueur ne porte ni la robe verte ni la robe bleue :
+    dire "Vous ne pouvez pas y aller comme ça. Il faut vous habiller.";
+    stopper l'action;
+  fin si.     
 
 PARTIE "Trajet".
 -- Sortir
-L'attelage est un lieu à l'extérieur de la chambre. 
+L'attelage est un lieu au sud de la chambre. 
   Sa description est "Vous montez dans l'attelage.".
 
 
