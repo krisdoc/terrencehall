@@ -9,7 +9,7 @@ Pour y jouer:
 Pour jouer, écrivez les commandes des actions de votre personnage. Le jeu vous répondra et ainsi de suite vous pourrez vivre cette aventure.
 
 Ce fichier d'aide a pour but de vous guider afin de profiter du meilleur du jeu. Trois niveaux d'aide sont présentés:
-* quelques conseils génériques si vous débuter sur donjon.fi 
+* quelques conseils génériques si vous débutez sur donjon.fi 
 * une rubrique d'aide pour vous guider si vous bloquez
 * une rubrique pleine de spoilers si vous êtes complètement perdu.e ou souhaitez explorer l'intégralité du contenu proposé.
 
