@@ -116,9 +116,9 @@ Grand-Mère est une personne dans l'attelage.
       dire "{/Merci pour cette danse./}".
       
   
-  La porte de l'attelage est une porte au sud de l'attelage.  Elle est fermée et ouvrable.
+  La portière est une porte à l'extérieur de l'attelage.  Elle est fermée et ouvrable.
   
-  après ouvrir la porte de l'attelage :
+  après ouvrir la portière :
 dire "La porte de l'attelage est ouverte.";
 si le joueur porte la robe verte et le collier, changer la relationWM augmente de 1;
 si le joueur porte la robe verte et le pendentif, changer la relationWM augmente de 3;
@@ -156,6 +156,9 @@ Violet Brightenberry est une personne dans la salle.
         Sa réaction concernant George Fullers est "{/J'ai eu du mal à lui échapper. Il est d'un ennui... Il ne parle que de jardinage. Il a conseillé Maman pour le nouveau dessin de nos bosquets, il était intarissable. Vous lui parlez à vos risques et périls, ma chère./}";
         changer l'historique contient "jardinage".
         
+        Sa réaction concernant Susan ou enfant est "{/Oh? J'adore un bon ragot comme n'importe qui mais je plains cette Susan./}".
+        Sa réaction concernant la dette ou les dettes est "{/Pauvre Felicity. Je ne comprends pas comment elle peut ne pas réprimander son frère pour son comportement. J'imagine que sa dot sera petite. Cela ne va pas l'aider à se marier, si ça se sait./}".
+        
         
         
           Son attitude est "{/Je vous remercie de votre attention./}".
@@ -168,6 +171,10 @@ Lady Brightenberry est une personne dans la salle.
     Sa réaction est "[1ère fois]Soyez les bienvenues. Lady Wolverton, quelle joie de vous revoir. Et Miss Wolverton. J'espère que vous aimerez cette réunion amicale sans chichis. [puis]J'espère que vous vous amusez. Avez-vous eu l'occasion de goûter les hors d'oeuvres? Ils sont divins.[fin choix]".
       Sa réaction concernant un sujet inconnu est "{/Je suis d'accord avec vous./}".
       Son info est "Lady Brightenberry laisse une grande liberté à Violet. Ce n'est pas mon cas, avec Mère et Grand-Mère pour me surveiller...".
+      
+      Sa réaction concernant la dette ou les dettes est "Je puis vous assurer que ce n'est pas le cas. Lord Brightenberry lui a prêté de l'argent qui lui a été remboursé dans les meilleurs délais./}".
+      
+      Sa réaction concernant Susan ou enfant est "{/Voilà un sujet qui n'est pas digne de votre attention. Votre mère n'aimerait pas que vous colportiez de telles médisances./}".
       
          après danser avec Lady Brightenberry:
          dire "{/Merci pour cette danse...inattendue./}".
@@ -187,6 +194,10 @@ changer l'historique contient "riche".
 
 Sa réaction concernant Francis Trenton est "{/C'est un bon parti. Il est titré et sa fortune semble bien établie. On dit de lui que c'est un parfait gentleman. Ses idées sur le mariage le prouvent./}".
 Sa réaction concernant William Montgomery est "{/De nombreuses donzelles autour de lui mais aucune n'a réussi à lui mettre le grappin dessus. Il peut faire un bon parti, même si sa fortune n'est pas très importante et qu'il n'est que peu titré. Un troisième choix donc./}".
+
+Sa réaction concernant la dette ou les dettes est "{/Cela est fâcheux, très fâcheux. Évidemment cela le disqualifie complètement./}".
+
+Sa réaction concernant enfant ou Susan est "{/Nous ne pouvons tolérer qu'un tel scandale éclabousse notre famille. Tenez-vous à l'écart de cet homme./}".
 
 
 
@@ -230,6 +241,8 @@ Il est mariable.
               changer relationAT diminue de 1.
             
             Sa réaction concernant le mariage, la femme, sa femme, son épouse ou les femmes est "{/Ce qui compte le plus pour moi est que mon épouse soit heureuse. Pour cela, je la protégerai comme doit le faire tout gentleman qui se respecte./}".
+            
+            Sa réaction concernant enfant ou Susan est "{/Ce cher William est père? Je l'ignorais. Je dois bien avouer que je n'en suis pas vraiment surpris, il fut une période où il fréquentait assidûment cette modiste, avant de se fournir chez son nouveau tailleur. Tailleur dont il fait la fortune d'ailleurs. Regardez un peu la coupe de son veston de ce soir. Avez-vous déjà vu un meilleur drapé?/}".
             
             Sa réaction concernant un sujet inconnu est "{/J'ignore tout de cela./}".
             
@@ -304,7 +317,7 @@ Sa réaction concernant William Montgomery est "{/Il se murmure que sir William 
   
 Sa réaction concernant les dettes ou la dette est "{/Francis? Endetté? Je ne peux y croire... Vraiment? Mais alors, fuyez! Je sais que votre famille est, comment dire, un peu en recherche, de... d'un bon parti, voilà. Cela vous ferait grand tort, je le crains. Je ne puis le souffrir./}";
   changer la relationAT diminue de 5.
-
+  
 Son info est "Felicity est une de mes amies proches. Toutefois, il ne faut pas que j'oublie qu'elle aussi cherche à se marier.".
 
 Interpréter Felicity, Miss Trenton comme Felicity Trenton.
@@ -345,6 +358,9 @@ Il est mariable.
               
             Sa réaction concernant le mariage, la femme, sa femme, son épouse ou les femmes est "{/Ma femme sera libre tant qu'elle ne provoque pas de scandale. Une femme doit être obéissante à son mari et doit le mettre en valeur en toutes circonstances./}".
             
+            Sa réaction concernant enfant ou Susan est "{/Comme si ce genre d'aventures étaient digne d'intérêt... Allons ma chère, parlons de choses plus intéressantes. Je vous ai parlé du dernier bosquet que j'ai dessiné pour mon jardin d'hiver?/}".
+            
+            Sa réaction concernant la dette ou les dettes est "{/Plaie d'argent n'est pas mortelle. La solution est très simple, il n'a qu'à rembourser ses créanciers./}".
             
               
                
@@ -403,6 +419,10 @@ Il est mariable.
         			  Sa réaction concernant le mariage, la femme, sa femme, son épouse, la famille ou les femmes est "{/Mon affectation à la garde de notre souverain me laisse peu de temps pour tenir une maison ou un domaine. Mon épouse aura donc la charge complète de la maison. Je vois cette relation comme un partenariat, les deux époux s'épaulant l'un l'autre dans la gestion de la famille. J'entends avoir une grande famille, voyez-vous./}".
         			 
         			 Sa réaction concernant un sujet inconnu est "{/J'ignore tout de cela, mais je puis me renseigner./}".
+        			 
+        			 Sa réaction concernant enfant ou Susan est "{/Cela est tellement inhumain envers l'enfant et sa mère. Un enfant est un cadeau, comment peut-il l'ignorer ainsi? Cela me dépasse./}".
+        			 
+        			 Sa réaction concernant la dette ou les dettes est "{/S'il me devait cet argent, cela ferait longtemps que je lui en aurai demandé raison, à l'aube et avec chacun un ami proche./}".
                
       après parler avec David Sallister, danser avec David Sallister, parler de stratégie avec David Sallister ou charmer David Sallister:
        si ragotmètre atteint 7:
@@ -525,8 +545,10 @@ Sa réaction concernant un sujet inconnu est "{/Cela ne m'intéresse guère./}".
 Sa réaction concernant David Sallister est "{/Il aime la stratégie. C'est un ancien camarade de régiment de feu mon mari. Il est très ambitieux. Cela ne m'étonnerait pas qu'il devienne colonel un jour./}";
   changer l'historique contient "stratégie".
   
-Sa réaction concernant Francis Trenton est "{/Un bon gentleman paie ses dettes. J'ai le regret de vous dire que le vicomte Trenton n'est pas un gentleman. Il a des dettes. Il me doit de l'argent, parié avec mon défunt mari aux courses de chevaux./}";
+Sa réaction concernant Francis Trenton, la dette ou les dettes est "{/Un bon gentleman paie ses dettes. J'ai le regret de vous dire que le vicomte Trenton n'est pas un gentleman. Il a des dettes. Il me doit de l'argent, parié avec mon défunt mari aux courses de chevaux./}";
   changer l'historique contient "dettes".
+  
+  Sa réaction concernant enfant ou Susan est "{/Je connais peu cet homme, mais des échos que j'ai eu, cela ne me surprend en rien voyez-vous./}".
 
 Sa réaction est "Vous échangez des banalités.".
 
@@ -539,6 +561,10 @@ Alexandra Montgomery est une personne dans la salle.
 Son aperçu est "Parmi un groupe de jeunes filles un peu bruyantes, vous reconnaissez Alexandra Montgomery, la cousine de sir William Montgomery.".
 Sa réaction concernant William Montgomery est "{/William est LA référence pour tout ce qui touche à la mode. Il fait preuve d'un goût exquis en la matière. Oh, et si vous voulez tout savoir sur tout le monde, c'est à lui qu'il faut parler. Il connaît les travers de chacun et ne rechigne pas à les partager. Il paraît qu'il cherche à se marier, mais ma tante n'y croit plus. Entre nous, vu comment il parle de sa future épouse, je pense que ce sera un mariage compliqué./}";
   changer l'historique contient "mode".
+  
+  Sa réaction concernant enfant ou Susan est "{/Je ne puis croire ce que vous me racontez. Le William que j'aime assumerait les conséquences de ses actes... En même temps, est-ce si surprenant? Il a toujours été réticent à s'engager. Vous m'avez donné matière à réfléchir, ma chère./}".
+  
+  Sa réaction concernant la dette ou les dettes est "{/Ma foi, quel gentleman n'a pas quelques dettes? Est-ce nécessaire de ruiner la réputation d'un homme pour quelques livres?/}".
 
 Sa réaction est "Vous échangez des banalités.".
 
