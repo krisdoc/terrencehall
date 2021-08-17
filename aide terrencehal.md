@@ -1,4 +1,21 @@
-Conseils pour Soir de Bal à Terrencehall
+Soir de bal à Terrencehall est une fiction intéractive créée par KrisDoC.
+
+Pour y jouer:
+* télécharger le fichier .djn
+* rendez-vous sur https://donjon.fi/jouer/
+* charger le fichier .djn
+* jouer
+
+Pour jouer, écrivez les commandes des actions de votre personnage. Le jeu vous répondra et ainsi de suite vous pourrez vivre cette aventure.
+
+Ce fichier d'aide a pour but de vous guider afin de profier du meilleur du jeu. Trois niveaux d'aide sont présentés:
+* quelques conseils génériques si vous débuter sur donjon.fi 
+* une rubrique d'aide pour vous guider si vous bloquez
+* une rubrique pleine de spoilers si vous êtes complètement perdu.e ou souhaitez explorer l'intégralité du contenu proposé.
+
+Dans tous les cas, pour toute question ou aide, n'hésitez pas à me contacter, en commentaire sur itch.io ou via twitter (@KrissDoC).
+
+# Conseils pour Soir de Bal à Terrencehall
 
 Votre but est d'obtenir une demande en mariage et de l'accepter. Cette action met fin au jeu.
 Utiliser l'aide pour avoir des précisions sur les actions les plus courantes.
@@ -24,7 +41,7 @@ Les noms peuvent être écrits en minuscules (vous pouvez utiliser uniquement le
 
 
 
-VOICI L'AIDE 
+# VOICI L'AIDE 
 
 Aide:
 Grand-Mère est toujours de bon conseil.
@@ -47,11 +64,11 @@ penser à untel
 
 
 
-ATTENTION
+# ATTENTION
 
 
 
-SPOILERS EN APPROCHE
+# SPOILERS EN APPROCHE
 
 
 
@@ -59,9 +76,9 @@ SPOILERS EN APPROCHE
 
 
 
-ZONE SPOILERS 
+# ZONE SPOILERS 
 
-Spoilers
+## Spoilers
 Intéragir avec les personnages améliorera vos  relations avec ceux-ci. L'état de vos relations est visible dans l'inventaire (taper "inventaire" ou "i").
 Attention, certaines actions peuvent faire diminuer vos relations avec ces messieurs:
 * George: intéragir avec n'importe quel autre homme
