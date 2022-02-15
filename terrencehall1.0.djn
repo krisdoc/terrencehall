@@ -11,7 +11,7 @@ La relationAT est un compteur.
 Le nbdansesAT est un compteur.
 Le ragotmètre est un compteur.
 
-
+L'historique est une liste.
 
 -- Votre chambre
 La chambre est un lieu. "Vous voici dans votre chambre.".
@@ -452,14 +452,13 @@ Il est mariable.
 	   Son info est "Je connais peu cette personne mais sa cousine, Alexandra Montgomery, peut probablement me parler de son cousin.".
      Interpréter William, sir William et Montgomery comme William Montgomery.
      
-     
     après charmer William Montgomery:
       dire "{/J'apprécie beaucoup votre compagnie, Miss Wolverton./}";
-    changer la relationWM augmente de 2;
-    changer la relationGF diminue de 1;
-    changer la relationAS diminue de 1.
+      changer la relationWM augmente de 2;
+      changer la relationGF diminue de 1;
+      changer la relationAS diminue de 1.
    
-      après danser avec William Montgomery:
+    après danser avec William Montgomery:
       dire "{/Merci pour cette danse, Miss Wolverton./}";
       changer nbdansesWM augmente de 1;
       changer la relationGF diminue de 1;
@@ -522,18 +521,36 @@ Il est mariable.
 			  
 			
                
-      après parler avec William Montgomery, danser avec William Montgomery, parler de Francis Trenton, Violet Brightenberry, Albert Sallister, Lady Brightenberry, la mode ou George Fullers avec William Montgomery ou charmer William Montgomery:
-      si ragotmètre atteint 7:
-        dire "Grand-Mère vient vous chercher et vous ramène à la maison, furieuse de votre attitude désinvolte et vulgaire. {/Vous n'êtes qu'une dévergondée, mademoiselle. Une dévergondée qui vient de faire honte au nom même que vous portez./}";
-        terminer le jeu;
+      après 
+        parler avec William Montgomery, 
+        danser avec William Montgomery, 
+        parler de Francis Trenton avec William Montgomery, 
+        parler de Violet Brightenberry avec William Montgomery, 
+        parler Albert Sallister avec William Montgomery,
+        parler de Lady Brightenberry avec William Montgomery, 
+        parler de la mode avec William Montgomery, 
+        parler de George Fullers avec William Montgomery ou 
+        charmer William Montgomery:
+        si ragotmètre atteint 7:
+          dire "Grand-Mère vient vous chercher et vous ramène à la maison, furieuse de votre attitude désinvolte et vulgaire. {/Vous n'êtes qu'une dévergondée, mademoiselle. Une dévergondée qui vient de faire honte au nom même que vous portez./}";
+          terminer le jeu;
         fin si.
         
-        après parler avec William Montgomery, danser avec William Montgomery, parler de Francis Trenton, Violet Brightenberry, Albert Sallister, Lady Brightenberry, la mode ou George Fullers avec William Montgomery ou charmer William Montgomery:
+      après 
+        parler avec William Montgomery, 
+        danser avec William Montgomery, 
+        parler de Francis Trenton avec William Montgomery, 
+        parler de Violet Brightenberry avec William Montgomery, 
+        parler de Albert Sallister avec William Montgomery, 
+        parler de Lady Brightenberry avec William Montgomery, 
+        parler de la mode avec William Montgomery,
+        parler de George Fullers avec William Montgomery ou 
+        charmer William Montgomery:
         si relationWM atteint 7:  
-        dire "{/Voulez-vous m'épouser?/} {/accepter/}/{/refuser/}";
-        changer historique contient "demande faite";
-        changer historique contient "demande faite par William Montgomery";
-        changer historique contient "William Montgomery";
+          dire "{/Voulez-vous m'épouser?/} {/accepter/}/{/refuser/}";
+          changer historique contient "demande faite";
+          changer historique contient "demande faite par William Montgomery";
+          changer historique contient "William Montgomery";
         fin si.
 
 
@@ -581,7 +598,7 @@ Interpréter Alexandra ou Miss Montgomery comme Alexandra Montgomery.
 PARTIE "Règles".
 -- Règles
 avant commencer le jeu:
-  dire "Bienvenue dans {/Soir de bal à Terrencehall/} ! Mettez vos plus beaux atours et affûtez votre esprit car vous allez évoluer dans la plus haute société à la recherche d'un bien très convoité: un bon parti. Votre objectif est d'obtenir une demande en mariage. Pour cela, il vous faudra vous frayer un chemin au sein de la bonne société.".
+  dire "Bienvenue dans {/Soir de bal à Terrencehall/} ! Mettez vos plus beaux atours et affûtez votre esprit car vous allez évoluer dans la plus haute société à la recherche d'un bien très convoité: un bon parti. Votre objectif est d'obtenir une demande en mariage. Pour cela, il vous faudra vous frayer un chemin au sein de la bonne société.{N}{N}".
   
 
   
@@ -694,8 +711,4 @@ exécuter afficher ceci:
   sinonsi ceci est les sorties ou la sortie:
     dire "[sorties ici]";
   fin si.
-
-  
-
-
 
