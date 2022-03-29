@@ -99,22 +99,40 @@ avant ouvrir porte:
 PARTIE "Trajet".
 -- Sortir
 L'attelage est un lieu au sud de la chambre. 
-  Sa description est "Vous montez dans l'attelage.".
+  Sa description est "Vous montez dans l'attelage. Vous y rejoignez votre grand-mère qui va vous servir de chaperon pour ce soir et toutes les autres occasions mondaines de la saison. Lady Wolverton, la baronne douairière, Grand-Mère. A ne pas confondre avec Lady Wolverton, née Teresa Mardbury, Mère. Il y a eu un grand débat sur qui allait vous accompagner ce soir. Grand-Mère a estimé que Lady Wolverton était trop laxiste tandis que Mère faisait prévaloir que Lady Wolverton est bien trop rigide. Comme toujours, Grand-Mère a eu le dernier mot. [si le joueur porte la robe verte et le pendentif]Après avoir évalué d'un coup d'oeil votre tenue, elle signale au cocher de se mettre en route. [si le joueur porte la robe bleue et le pendentif]{/Il faudra veiller à mieux assortir vos accessoires. Mais nous sommes pressées. A l'avenir, je vous dirai quoi porter puisque vous n'êtes pas capable de prendre cette décision./}[fin si]".
   
 
+CHAPITRE "Grand-Mère".
 Grand-Mère est une personne dans l'attelage.
-  Son aperçu est "Vous y rejoignez votre grand-mère qui va vous servir de chaperon pour ce soir et toutes les autres occasions mondaines de la saison. Lady Wolverton, la baronne douairière, Grand-Mère. A ne pas confondre avec Lady Wolverton, née Teresa Mardbury, Mère. Il y a eu un grand débat sur qui allait vous accompagner ce soir. Grand-Mère a estimé que Lady Wolverton était trop laxiste tandis que Mère faisait prévaloir que Lady Wolverton est bien trop rigide. Comme toujours, Grand-Mère a eu le dernier mot. [si le joueur porte la robe verte et le pendentif]Après avoir évalué d'un coup d'oeil votre tenue, elle signale au cocher de se mettre en route. [si le joueur porte la robe bleue et le pendentif]{/Il faudra veiller à mieux assortir vos accessoires. Mais nous sommes pressées. A l'avenir, je vous dirai quoi porter puisque vous n'êtes pas capable de prendre cette décision./}[fin si]".
+Son aperçu est " ".
 
-  
-  
+Sa description est "{/Il est entendu avec votre mère que je vous laisse choisir vos danses et conversations ce soir, mais souvenez-vous: je suis toujours là pour vous guider dans les méandres de la bonne société. N'oubliez pas pourquoi nous sommes ici: il vous faut décrocher un bon parti qui permettra de relever la fortune de notre famille. Nos espoirs reposent sur cette union. Choisissez avec discernement vos actions de ce soir./}".
+Sa réaction concernant un sujet inconnu est "{/Si je ne le sais pas c'est que ce n'est pas très important./}".
+Sa réaction concernant Lady Brightenberry est "{/C'est une dame bien comme il faut./}".
+Sa réaction concernant Violet Brightenberry est "{/C'est une jeune fille bien élevée. La côtoyer ne peut vous faire que du bien./}".
+Sa réaction concernant David Sallister est "{/C'est un parti peu ambitieux. Ses états de service lui font honneur. Son manque de fortune le disqualifie complètement. Il est certes séduisant (oui, j'ai des yeux pour voir), mais ce n'est pas ce qui compte ici. Je crois savoir qu'il veut une grande famille, ce qui réduirait d'autant le train de vie sur la solde d'un simple capitaine./}";
+changer l'historique contient "pauvre".
+
+Sa réaction concernant George Fullers est "{/C'est un parti très prometteur. Je t'invite à te rapprocher de lui. Il possède fortune ET standing. De plus, il a une saine approche de ce qu'est une bonne épouse. Que demander de plus?/}";
+changer l'historique contient "riche".
+
+Sa réaction concernant Francis Trenton est "{/C'est un bon parti. Il est titré et sa fortune semble bien établie. On dit de lui que c'est un parfait gentleman. Ses idées sur le mariage le prouvent./}".
+Sa réaction concernant William Montgomery est "{/De nombreuses donzelles autour de lui mais aucune n'a réussi à lui mettre le grappin dessus. Il peut faire un bon parti, même si sa fortune n'est pas très importante et qu'il n'est que peu titré. Un troisième choix donc./}".
+
+Sa réaction concernant la dette ou les dettes est "{/Cela est fâcheux, très fâcheux. Évidemment cela le disqualifie complètement./}".
+
+Sa réaction concernant enfant ou Susan est "{/Nous ne pouvons tolérer qu'un tel scandale éclabousse notre famille. Tenez-vous à l'écart de cet homme./}".
+
+Son info est "Grand-Mère est ma grand-mère paternelle. Elle a à coeur que je trouve un bon parti, riche, si possible, afin de relever la fortune de la famille. Elle est souvent en conflit avec Mère.".
+Sa réaction est "{/Tiens-toi droite et ne parle pas trop./}".
  
-  
-    Son info est "Grand-Mère est ma grand-mère paternelle. Elle a à coeur que je trouve un bon parti, riche, si possible, afin de relever la fortune de la famille. Elle est souvent en conflit avec Mère.".
-    Sa réaction est "{/Tiens-toi droite et ne parle pas trop./}".
+ après danser avec Grand-Mère:
+      dire "{/Merci pour cette danse./}".    
    
-    après danser avec Grand-Mère:
-      dire "{/Merci pour cette danse./}".
-      
+  après aller vers la salle:
+    déplacer Grand-Mère dans la salle.
+     
+    
   
   La portière est une porte à l'extérieur de l'attelage.  Elle est fermée et ouvrable.
   
@@ -150,7 +168,7 @@ Violet Brightenberry est une personne dans la salle.
   Son info est "Violet est probablement ma meilleure amie. Au moins, j'aurai une alliée dans la place ce soir.".
 
       Son aperçu est "Miss Violet Brightenberry, votre amie de toujours, aide sa mère à accueillir les invités.".
-        Sa réaction est "{/[1ère fois]Je suis ravie que vous soyez là ce soir. A nous deux, on va conquérir cette soirée. Soyez prêts, messieurs![puis]De qui souhaitez-vous que nous parlions?/}";
+        Sa réaction est "{/[1ère fois] Je suis ravie que vous soyez là ce soir. A nous deux, on va conquérir cette soirée. Soyez prêts, messieurs![puis] De qui souhaitez-vous que nous parlions?/}";
         choisir librement:
           choix "David Sallister":
             dire "{/Il est très bel homme, vous ne trouvez pas? Dommage qu'il ne soit pas plus fortuné. Il paraît qu'il laissera sa femme travailler en dehors de la maison. Ce n'est pas très convenable. Ma mère me tuerait si je l'envisageais. Ne lui dites rien./}";
@@ -176,7 +194,7 @@ Violet Brightenberry est une personne dans la salle.
           
 CHAPITRE "Lady Brightenberry".
 Lady Brightenberry est une personne dans la salle.
-  Son aperçu est "Votre hôte, Lady Brightenberry, se trouve à l'entrée de la salle pour vous souhaiter la bienvenue.".
+  Son aperçu est "Votre hôte, Lady Brightenberry, se trouve à l'entrée de la salle pour vous souhaiter la bienvenue. Elle entame la conversation avec Grand-Mère.".
     Sa réaction est "[1ère fois]Soyez les bienvenues. Lady Wolverton, quelle joie de vous revoir. Et Miss Wolverton. J'espère que vous aimerez cette réunion amicale sans chichis. [puis]J'espère que vous vous amusez. Avez-vous eu l'occasion de goûter les hors d'oeuvres? Ils sont divins.[fin choix]".
       Sa réaction concernant un sujet inconnu est "{/Je suis d'accord avec vous./}".
       Son info est "Lady Brightenberry laisse une grande liberté à Violet. Ce n'est pas mon cas, avec Mère et Grand-Mère pour me surveiller...".
@@ -188,26 +206,6 @@ Lady Brightenberry est une personne dans la salle.
          après danser avec Lady Brightenberry:
          dire "{/Merci pour cette danse...inattendue./}".
           Son attitude est "{/Vous me flattez, mais ce n'est pas le lieu ou le moment. Je dois m'occuper de mes invités./}".
-CHAPITRE "Grand-Mère".
-Grand-Mère est une personne dans la salle.
-Son aperçu est "Grand-Mère échange des platitudes avec Lady Brightenberry.".
-Sa description est "{/Il est entendu avec votre mère que je vous laisse choisir vos danses et conversations ce soir, mais souvenez-vous: je suis toujours là pour vous guider dans les méandres de la bonne société. N'oubliez pas pourquoi nous sommes ici: il vous faut décrocher un bon parti qui permettra de relever la fortune de notre famille. Nos espoirs reposent sur cette union. Choisissez avec discernement vos actions de ce soir./}".
-Sa réaction concernant un sujet inconnu est "{/Si je ne le sais pas c'est que ce n'est pas très important./}".
-Sa réaction concernant Lady Brightenberry est "{/C'est une dame bien comme il faut./}".
-Sa réaction concernant Violet Brightenberry est "{/C'est une jeune fille bien élevée. La côtoyer ne peut vous faire que du bien./}".
-Sa réaction concernant David Sallister est "{/C'est un parti peu ambitieux. Ses états de service lui font honneur. Son manque de fortune le disqualifie complètement. Il est certes séduisant (oui, j'ai des yeux pour voir), mais ce n'est pas ce qui compte ici. Je crois savoir qu'il veut une grande famille, ce qui réduirait d'autant le train de vie sur la solde d'un simple capitaine./}";
-changer l'historique contient "pauvre".
-
-Sa réaction concernant George Fullers est "{/C'est un parti très prometteur. Je t'invite à te rapprocher de lui. Il possède fortune ET standing. De plus, il a une saine approche de ce qu'est une bonne épouse. Que demander de plus?/}";
-changer l'historique contient "riche".
-
-Sa réaction concernant Francis Trenton est "{/C'est un bon parti. Il est titré et sa fortune semble bien établie. On dit de lui que c'est un parfait gentleman. Ses idées sur le mariage le prouvent./}".
-Sa réaction concernant William Montgomery est "{/De nombreuses donzelles autour de lui mais aucune n'a réussi à lui mettre le grappin dessus. Il peut faire un bon parti, même si sa fortune n'est pas très importante et qu'il n'est que peu titré. Un troisième choix donc./}".
-
-Sa réaction concernant la dette ou les dettes est "{/Cela est fâcheux, très fâcheux. Évidemment cela le disqualifie complètement./}".
-
-Sa réaction concernant enfant ou Susan est "{/Nous ne pouvons tolérer qu'un tel scandale éclabousse notre famille. Tenez-vous à l'écart de cet homme./}".
-
 
 
   
