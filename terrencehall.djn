@@ -150,7 +150,16 @@ Violet Brightenberry est une personne dans la salle.
   Son info est "Violet est probablement ma meilleure amie. Au moins, j'aurai une alliée dans la place ce soir.".
 
       Son aperçu est "Miss Violet Brightenberry, votre amie de toujours, aide sa mère à accueillir les invités.".
-        Sa réaction est "{/Je suis ravie que vous soyez là ce soir. A nous deux, on va conquérir cette soirée. Soyez prêts, messieurs!/}".
+        Sa réaction est "{/[1ère fois]Je suis ravie que vous soyez là ce soir. A nous deux, on va conquérir cette soirée. Soyez prêts, messieurs![puis]De qui souhaitez-vous que nous parlions?/}";
+        choisir librement:
+          choix "David Sallister":
+            dire "{/Il est très bel homme, vous ne trouvez pas? Dommage qu'il ne soit pas plus fortuné. Il paraît qu'il laissera sa femme travailler en dehors de la maison. Ce n'est pas très convenable. Ma mère me tuerait si je l'envisageais. Ne lui dites rien./}";
+            changer l'historique contient "pauvre";
+          choix "George Fullers":
+            dire "{/J'ai eu du mal à lui échapper. Il est d'un ennui... Il ne parle que de jardinage. Il a conseillé Maman pour le nouveau dessin de nos bosquets, il était intarissable. Vous lui parlez à vos risques et périls, ma chère./}";
+            changer l'historique contient "jardinage";
+        fin choisir.
+        
         Sa réaction concernant David Sallister est "{/Il est très bel homme, vous ne trouvez pas? Dommage qu'il ne soit pas plus fortuné. Il paraît qu'il laissera sa femme travailler en dehors de la maison. Ce n'est pas très convenable. Ma mère me tuerait si je l'envisageais. Ne lui dites rien./}";
         changer l'historique contient "pauvre".
         Sa réaction concernant George Fullers est "{/J'ai eu du mal à lui échapper. Il est d'un ennui... Il ne parle que de jardinage. Il a conseillé Maman pour le nouveau dessin de nos bosquets, il était intarissable. Vous lui parlez à vos risques et périls, ma chère./}";
