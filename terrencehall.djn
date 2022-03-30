@@ -172,7 +172,11 @@ Violet Brightenberry est une personne dans la salle.
           choix "George Fullers":
             dire "{/J'ai eu du mal à lui échapper. Il est d'un ennui... Il ne parle que de jardinage. Il a conseillé Maman pour le nouveau dessin de nos bosquets, il était intarissable. Vous lui parlez à vos risques et périls, ma chère./}";
             changer l'historique contient "jardinage";
-        fin choisir.
+          choix "Susan":
+            dire "{/Oh? J'adore un bon ragot comme n'importe qui mais je plains cette Susan./}";
+          choix "dettes":
+            dire "{/Pauvre Felicity. Je ne comprends pas comment elle peut ne pas réprimander son frère pour son comportement. J'imagine que sa dot sera petite. Cela ne va pas l'aider à se marier, si ça se sait./}";
+        Fin choisir.
         
         Sa réaction concernant David Sallister est "{/Il est très bel homme, vous ne trouvez pas? Dommage qu'il ne soit pas plus fortuné. Il paraît qu'il laissera sa femme travailler en dehors de la maison. Ce n'est pas très convenable. Ma mère me tuerait si je l'envisageais. Ne lui dites rien./}";
         changer l'historique contient "pauvre".
@@ -192,7 +196,7 @@ Violet Brightenberry est une personne dans la salle.
 CHAPITRE "Lady Brightenberry".
 Lady Brightenberry est une personne dans la salle.
   Son aperçu est "Votre hôte, Lady Brightenberry, se trouve à l'entrée de la salle pour vous souhaiter la bienvenue. Elle entame la conversation avec Grand-Mère.".
-    Sa réaction est "[1ère fois]Soyez les bienvenues. Lady Wolverton, quelle joie de vous revoir. Et Miss Wolverton. J'espère que vous aimerez cette réunion amicale sans chichis. [puis]J'espère que vous vous amusez. Avez-vous eu l'occasion de goûter les hors d'oeuvres? Ils sont divins.[fin choix]".
+    Sa réaction est "[1ère fois]Soyez les bienvenues. Lady Wolverton, quelle joie de vous revoir. Et Miss Wolverton. J'espère que vous aimerez cette réunion amicale sans chichis. [2ème fois]J'espère que vous vous amusez. Avez-vous eu l'occasion de goûter les hors d'oeuvres? Ils sont divins.[fin choix]".
       Sa réaction concernant un sujet inconnu est "{/Je suis d'accord avec vous./}".
       Son info est "Lady Brightenberry laisse une grande liberté à Violet. Ce n'est pas mon cas, avec Mère et Grand-Mère pour me surveiller...".
       
@@ -213,7 +217,22 @@ Il est mariable.
  Sa relationAT vaut 0.
  Son nbdansesAT vaut 0.
   Son aperçu est "Un homme dans la trentaine, le vicomte Francis Trenton, est en grande conversation avec sa soeur, Felicity Trenton.".
-    Sa réaction est "Vous échangez longuement sur divers sujets.".
+    Sa réaction est "Vous échangez longuement sur divers sujets. De quoi discutez-vous?";
+    choisir librement:
+    choix "courses":
+      dire "{/Le Derby? Ma foi j'ai plutôt misé sur le bon cheval, je dois dire./}";
+      changer relationAT augmente de 2;
+    choix "chevaux":
+      dire "{/Il n'y a rien que j'aime plus que de monter un cheval tôt le matin pour une longue randonnée sur mes terres./}";
+      changer relationAT augmente de 2;
+    choix "dettes":
+      dire "{/Je ne vois pas de quoi vous voulez parler. Changeons de sujet, voulez-vous?/}";
+      changer relationAT diminue de 1;
+    choix "mariage":
+      dire "{/Ce qui compte le plus pour moi est que mon épouse soit heureuse. Pour cela, je la protégerai comme doit le faire tout gentleman qui se respecte./}";
+    choix "Susan":
+      dire "{/Ce cher William est père? Je l'ignorais. Je dois bien avouer que je n'en suis pas vraiment surpris, il fut une période où il fréquentait assidûment cette modiste, avant de se fournir chez son nouveau tailleur. Tailleur dont il fait la fortune d'ailleurs. Regardez un peu la coupe de son veston de ce soir. Avez-vous déjà vu un meilleur drapé?/}";
+    fin choix.
   
  
      
@@ -231,7 +250,7 @@ Il est mariable.
       si nbdansesAT atteint 3, changer ragotmètre augmente de 1.
    
         après parler avec Francis Trenton:
-        dire "{/Merci pour ce moment, Miss Wolverton./}";
+        dire "{/Merci pour cette discussion, Miss Wolverton./}";
         changer la relationAT augmente de 1;
         changer la relationGF diminue de 1.
     
