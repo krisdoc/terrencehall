@@ -87,9 +87,9 @@ après mettre le pendentif:
       Sa description est "Dans le miroir, vous voyez une jeune fille de taille moyenne au teint clair. De longs cheveux roux et des yeux verts complètent le tableau. Elle semble nerveuse à l'approche du moment d'aller au bal.".
         Interpréter le miroir comme le grand miroir.
         
- La porte est une porte au sud de la chambre. Elle est fermée et ouvrable.
+
  
-avant ouvrir porte:
+avant aller vers l'attelage:
   si le joueur ne porte ni la robe verte ni la robe bleue :
     dire "Vous ne pouvez pas y aller comme ça. Il faut vous habiller.";
     stopper l'action;
@@ -104,7 +104,7 @@ L'attelage est un lieu au sud de la chambre.
 
 CHAPITRE "Grand-Mère".
 Grand-Mère est une personne dans l'attelage.
-Son aperçu est " ".
+Son aperçu est "[initialement] Grand-Mère vous attend dans l'attelage. [puis]Grand-Mère est en grande conversation avec Lady Brightenberry[fin choix]".
 
 Sa description est "{/Il est entendu avec votre mère que je vous laisse choisir vos danses et conversations ce soir, mais souvenez-vous: je suis toujours là pour vous guider dans les méandres de la bonne société. N'oubliez pas pourquoi nous sommes ici: il vous faut décrocher un bon parti qui permettra de relever la fortune de notre famille. Nos espoirs reposent sur cette union. Choisissez avec discernement vos actions de ce soir./}".
 Sa réaction concernant un sujet inconnu est "{/Si je ne le sais pas c'est que ce n'est pas très important./}".
@@ -130,17 +130,10 @@ Sa réaction est "{/Tiens-toi droite et ne parle pas trop./}".
       dire "{/Merci pour cette danse./}".    
    
   après aller vers la salle:
-    déplacer Grand-Mère dans la salle.
-     
-    
-  
-  La portière est une porte à l'extérieur de l'attelage.  Elle est fermée et ouvrable.
-  
-  après ouvrir la portière :
-dire "La porte de l'attelage est ouverte.";
-si le joueur porte la robe verte et le collier, changer la relationWM augmente de 1;
-si le joueur porte la robe verte et le pendentif, changer la relationWM augmente de 3;
-si le joueur porte la robe bleue et le pendentif, changer la relationWM diminue de 3.
+    déplacer Grand-Mère dans la salle;
+    si le joueur porte la robe verte et le collier, changer la relationWM augmente de 1;
+    si le joueur porte la robe verte et le pendentif, changer la relationWM augmente de 3;
+    si le joueur porte la robe bleue et le pendentif, changer la relationWM diminue de 3.
 
     
 PARTIE "Bal".
@@ -168,9 +161,12 @@ Violet Brightenberry est une personne dans la salle.
   Son info est "Violet est probablement ma meilleure amie. Au moins, j'aurai une alliée dans la place ce soir.".
 
       Son aperçu est "Miss Violet Brightenberry, votre amie de toujours, aide sa mère à accueillir les invités.".
-        Sa réaction est "{/[1ère fois] Je suis ravie que vous soyez là ce soir. A nous deux, on va conquérir cette soirée. Soyez prêts, messieurs![puis] De qui souhaitez-vous que nous parlions?/}";
+        Sa réaction est "{/ [1ère fois] Je suis ravie que vous soyez là ce soir. A nous deux, on va conquérir cette soirée. Soyez prêts, messieurs! [puis] De qui souhaitez-vous que nous parlions?/}";
         choisir librement:
           choix "David Sallister":
+            dire "{/Il est très bel homme, vous ne trouvez pas? Dommage qu'il ne soit pas plus fortuné. Il paraît qu'il laissera sa femme travailler en dehors de la maison. Ce n'est pas très convenable. Ma mère me tuerait si je l'envisageais. Ne lui dites rien./}";
+            changer l'historique contient "pauvre";
+          choix "David":
             dire "{/Il est très bel homme, vous ne trouvez pas? Dommage qu'il ne soit pas plus fortuné. Il paraît qu'il laissera sa femme travailler en dehors de la maison. Ce n'est pas très convenable. Ma mère me tuerait si je l'envisageais. Ne lui dites rien./}";
             changer l'historique contient "pauvre";
           choix "George Fullers":
@@ -191,6 +187,7 @@ Violet Brightenberry est une personne dans la salle.
           Son attitude est "{/Je vous remercie de votre attention./}".
           
             Interpréter Violet, Miss Brightenberry ou Miss Violet comme Violet Brightenberry.
+            
           
 CHAPITRE "Lady Brightenberry".
 Lady Brightenberry est une personne dans la salle.
