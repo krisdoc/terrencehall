@@ -104,7 +104,7 @@ L'attelage est un lieu au sud de la chambre.
 
 CHAPITRE "Grand-Mère".
 Grand-Mère est une personne dans l'attelage.
-Son aperçu est "[initialement] Grand-Mère vous attend dans l'attelage. [puis]Grand-Mère est en grande conversation avec Lady Brightenberry[fin choix]".
+Son aperçu est "[initialement] Grand-Mère vous attend dans l'attelage.[puis]Grand-Mère salue Lady Brightenberry.[fin choix]".
 
 Sa description est "{/Il est entendu avec votre mère que je vous laisse choisir vos danses et conversations ce soir, mais souvenez-vous: je suis toujours là pour vous guider dans les méandres de la bonne société. N'oubliez pas pourquoi nous sommes ici: il vous faut décrocher un bon parti qui permettra de relever la fortune de notre famille. Nos espoirs reposent sur cette union. Choisissez avec discernement vos actions de ce soir./}".
 Sa réaction concernant un sujet inconnu est "{/Si je ne le sais pas c'est que ce n'est pas très important./}".
@@ -166,9 +166,6 @@ Violet Brightenberry est une personne dans la salle.
           choix "David Sallister":
             dire "{/Il est très bel homme, vous ne trouvez pas? Dommage qu'il ne soit pas plus fortuné. Il paraît qu'il laissera sa femme travailler en dehors de la maison. Ce n'est pas très convenable. Ma mère me tuerait si je l'envisageais. Ne lui dites rien./}";
             changer l'historique contient "pauvre";
-          choix "David":
-            dire "{/Il est très bel homme, vous ne trouvez pas? Dommage qu'il ne soit pas plus fortuné. Il paraît qu'il laissera sa femme travailler en dehors de la maison. Ce n'est pas très convenable. Ma mère me tuerait si je l'envisageais. Ne lui dites rien./}";
-            changer l'historique contient "pauvre";
           choix "George Fullers":
             dire "{/J'ai eu du mal à lui échapper. Il est d'un ennui... Il ne parle que de jardinage. Il a conseillé Maman pour le nouveau dessin de nos bosquets, il était intarissable. Vous lui parlez à vos risques et périls, ma chère./}";
             changer l'historique contient "jardinage";
@@ -176,6 +173,8 @@ Violet Brightenberry est une personne dans la salle.
             dire "{/Oh? J'adore un bon ragot comme n'importe qui mais je plains cette Susan./}";
           choix "dettes":
             dire "{/Pauvre Felicity. Je ne comprends pas comment elle peut ne pas réprimander son frère pour son comportement. J'imagine que sa dot sera petite. Cela ne va pas l'aider à se marier, si ça se sait./}";
+          autre choix:
+            dire "{/Je connais peu cette personne, peut-être que quelqu'un d'autre pourra vous renseigner./}";
         Fin choisir.
         
         Sa réaction concernant David Sallister est "{/Il est très bel homme, vous ne trouvez pas? Dommage qu'il ne soit pas plus fortuné. Il paraît qu'il laissera sa femme travailler en dehors de la maison. Ce n'est pas très convenable. Ma mère me tuerait si je l'envisageais. Ne lui dites rien./}";
@@ -702,17 +701,16 @@ exécuter afficher ceci:
     dire "{_Quelques commandes utiles_}
       {e}- {-aide {/parler/}-} : afficher l’aide d’une commande
       {e}- {-aller {/nord/}-} : aller vers le nord
-      {e}- {-regarder-} : regarder autours de vous
+      {e}- {-regarder-} : regarder autour de vous
       {e}- {-examiner {/table/}-} : examiner un élément pour trouver des objets ou des informations
       {e}- {-étudier {/Henry/}-}: étudier l'attitude d'un personnage
       {e}- {-charmer {/Henry/}-} : flirter avec un personnage
       {e}- {-danser avec {/Henry/}-} : danser avec un personnage
       {e}- {-penser à {/Henry/}-} : faire une courte introspection à propos d'un personnage
-      {e}- {-prendre {/épée/}-} : prendre un objet
+      {e}- {-prendre {/verre/}-} : prendre un objet
       {e}- {-inventaire-} : afficher le contenu de votre inventaire et l'état de vos relations avec les différents partis
-      {e}- {-parler à {/magicienne/}-} : parler à un personnage
-      {e}- {-interroger {/couturier/} concernant {/tissu/}-} : faire parler un personnage concernant un sujet spécifique
-      {e}- {-ouvrir {/porte/} avec {/clé dorée/}-} : ouvrir la porte à l’aide de la clé dorée";
+      {e}- {-parler à {/Henry/}-} : parler à un personnage
+      {e}- {-interroger {/couturier/} concernant {/tissu/}-} : faire parler un personnage concernant un sujet spécifique";
   sinonsi ceci est l’inventaire:
     dire "{n}{n}Votre inventaire [si l’inventaire contient un objet]contient : [lister objets inventaire][sinon]est vide. [fin si]";
     dire "{n}{_Relations_}: 
