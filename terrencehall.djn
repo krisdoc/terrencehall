@@ -161,7 +161,7 @@ Violet Brightenberry est une personne dans la salle.
   Son info est "Violet est probablement ma meilleure amie. Au moins, j'aurai une alliée dans la place ce soir.".
 
       Son aperçu est "Miss Violet Brightenberry, votre amie de toujours, aide sa mère à accueillir les invités.".
-        Sa réaction est "{/ [1ère fois] Je suis ravie que vous soyez là ce soir. A nous deux, on va conquérir cette soirée. Soyez prêts, messieurs! [puis] De qui souhaitez-vous que nous parlions?/}";
+        Sa réaction est "{/ [1ère fois] Je suis ravie que vous soyez là ce soir. A nous deux, on va conquérir cette soirée. Soyez prêts, messieurs! [puis] De qui, ou de quoi, souhaitez-vous que nous parlions?/}";
         choisir librement:
           choix "David Sallister":
             dire "{/Il est très bel homme, vous ne trouvez pas? Dommage qu'il ne soit pas plus fortuné. Il paraît qu'il laissera sa femme travailler en dehors de la maison. Ce n'est pas très convenable. Ma mère me tuerait si je l'envisageais. Ne lui dites rien./}";
@@ -195,9 +195,20 @@ Violet Brightenberry est une personne dans la salle.
 CHAPITRE "Lady Brightenberry".
 Lady Brightenberry est une personne dans la salle.
   Son aperçu est "Votre hôte, Lady Brightenberry, se trouve à l'entrée de la salle pour vous souhaiter la bienvenue. Elle entame la conversation avec Grand-Mère.".
-    Sa réaction est "[1ère fois]Soyez les bienvenues. Lady Wolverton, quelle joie de vous revoir. Et Miss Wolverton. J'espère que vous aimerez cette réunion amicale sans chichis. [2ème fois]J'espère que vous vous amusez. Avez-vous eu l'occasion de goûter les hors d'oeuvres? Ils sont divins.[fin choix]".
+    Sa réaction est "{/[1ère fois]Soyez les bienvenues. Lady Wolverton, quelle joie de vous revoir. Et Miss Wolverton. J'espère que vous aimerez cette réunion amicale sans chichis. [2ème fois]J'espère que vous vous amusez. Avez-vous eu l'occasion de goûter les hors d'oeuvres? Ils sont divins.[fin choix] De qui, ou de quoi, souhaitez-vous que nous parlions?/}";
+      choisir librement:
+      choix "dettes":
+        dire "{/Je puis vous assurer que ce n'est pas le cas. Lord Brightenberry lui a prêté de l'argent qui lui a été remboursé dans les meilleurs délais./}";
+      choix "Susan":
+        dire "{/Voilà un sujet qui n'est pas digne de votre attention. Votre mère n'aimerait pas que vous colportiez de telles médisances./}";
+      autre choix:
+        dire "{/Je suis d'accord avec vous./}";
+      Fin choisir.
+    
+    
       Sa réaction concernant un sujet inconnu est "{/Je suis d'accord avec vous./}".
       Son info est "Lady Brightenberry laisse une grande liberté à Violet. Ce n'est pas mon cas, avec Mère et Grand-Mère pour me surveiller...".
+      
       
       Sa réaction concernant la dette ou les dettes est "Je puis vous assurer que ce n'est pas le cas. Lord Brightenberry lui a prêté de l'argent qui lui a été remboursé dans les meilleurs délais./}".
       
@@ -213,8 +224,7 @@ Lady Brightenberry est une personne dans la salle.
 CHAPITRE "Francis Trenton".
 Francis Trenton est une personne dans la salle.
 Il est mariable.
- Sa relationAT vaut 0.
- Son nbdansesAT vaut 0.
+
   Son aperçu est "Un homme dans la trentaine, le vicomte Francis Trenton, est en grande conversation avec sa soeur, Felicity Trenton.".
     Sa réaction est "Vous échangez longuement sur divers sujets. De quoi discutez-vous?";
     choisir librement:
@@ -231,6 +241,8 @@ Il est mariable.
       dire "{/Ce qui compte le plus pour moi est que mon épouse soit heureuse. Pour cela, je la protégerai comme doit le faire tout gentleman qui se respecte./}";
     choix "Susan":
       dire "{/Ce cher William est père? Je l'ignorais. Je dois bien avouer que je n'en suis pas vraiment surpris, il fut une période où il fréquentait assidûment cette modiste, avant de se fournir chez son nouveau tailleur. Tailleur dont il fait la fortune d'ailleurs. Regardez un peu la coupe de son veston de ce soir. Avez-vous déjà vu un meilleur drapé?/}";
+    autre choix:
+      dire "{/J'ignore tout de cela./}";
     fin choix.
   
  
@@ -330,7 +342,20 @@ Son aperçu est "Felicity Trenton est une jeune fille que vous connaissez bien."
 
 
 Sa réaction concernant un sujet inconnu est "{/J'ignore tout de cela./}".
-Sa réaction est "Vous échangez quelques banalités.".
+Sa réaction est "De qui, ou de quoi, discutez-vous?";
+  choisir librement:
+    choix "Francis Trenton":
+      dire "{/Mon frère est un parfait gentleman. Peut-être pas une personnalité mondaine mais qui il épousera pourra compter sur lui. Il est passionné de chevaux et de courses. Evoquer cela est une façon certaine d'attirer son attention./}";
+      changer l'historique contient "courses";
+    choix "William Montgomery":
+      dire "{/Il se murmure que sir William n'est pas le gentleman qu'il paraît. Il se dit qu'il aurait eu un enfant caché avec Susan, une couturière de ma modiste. Elle semblait avoir pris du poids puis a été licenciée. Elle est désormais sans le sou puisqu'il a refusé de subvenir à ses besoins et à ceux de l'enfant./}";
+      changer l'historique contient "enfant";
+    choix "dettes":
+      dire "{/Francis? Endetté? Je ne peux y croire... Vraiment? Mais alors, fuyez! Je sais que votre famille est, comment dire, un peu en recherche, de... d'un bon parti, voilà. Cela vous ferait grand tort, je le crains. Je ne puis le souffrir./}";
+      changer la relationAT diminue de 5;
+    fin choisir.
+
+
 Sa réaction concernant Francis Trenton est "{/Mon frère est un parfait gentleman. Peut-être pas une personnalité mondaine mais qui il épousera pourra compter sur lui. Il est passionné de chevaux et de courses. Evoquer cela est une façon certaine d'attirer son attention./}";
   changer l'historique contient "courses".
   
@@ -350,8 +375,7 @@ Le nbdansesGF est un compteur.
 
 George Fullers est une personne dans la salle.
 Il est mariable.
- Sa relationGF vaut 0.
- Son nbdansesGF vaut 0.
+
   Son aperçu est "Le jeune comte Fullers, George de son prénom, se trouve en retrait en train de siroter un verre de Champagne.".
      Sa réaction est "Vous échangez longuement sur divers sujets.".
      Son info est "Je connais peu cette personne. Grand-Mère sait peut-être quelque chose à son sujet.".
