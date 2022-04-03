@@ -524,7 +524,51 @@ Il est mariable.
  Sa relationWM vaut 0.
  Son nbdansesWM vaut 0.
   Son aperçu est "Une danse s'achève, les danseurs se saluent. Un dandy attire tous les regards, il s'agit de sir William Montgomery.".
-	   Sa réaction est "Vous échangez longuement sur divers sujets.".
+	   Sa réaction est "Vous échangez longuement sur divers sujets. De qui, ou de quoi, discutez-vous?";
+	    choisir librement:
+	      choix "mode":
+	        dire "{/Il y a beaucoup à déduire de la manière dont se vêt une personne de qualité. De manière inconsciente, elle exprime qui elle est, ce qui compte pour elle. Je n'ai que peu de respect pour quelqu'un qui a les moyens mais ne suit pas la mode du moment. C'est comme un pied de nez à toutes les conventions sociales de notre milieu. Mais cela nous procure l'occasion de médire les uns des autres, alors ce n'est pas si grave. [si le joueur porte la robe verte et le pendentif]Fort heureusement, vous faites preuve d'un oeil acéré pour ce qui touche à la parure./} [si le joueur porte la robe bleue et le pendentif]Il regarde votre tenue d'un air entendu.[fin si]";
+          changer relationWM augmente de 2;
+          changer la relationGF diminue de 1;
+          changer la relationAS diminue de 1;
+        choix "Lady Brightenberry":
+          dire "{/Notre hôte est la plus délicieuse des hôtesses. M'est avis que sa fille ne restera pas longtemps sur le marché du mariage./}";
+          changer relationWM augmente de 1;
+          changer la relationGF diminue de 1;
+          changer la relationAS diminue de 1;
+        choix "Violet Brightenberry":
+          dire "{/Une charmante jeune fille. Un parti idéal pour qui n'aime pas être contredit par son épouse, ou que celle-ci ait ses propres intérêts à coeur./}";
+          changer relationWM augmente de 1;
+          changer la relationGF diminue de 1;
+          changer la relationAS diminue de 1;
+        choix "David Sallister":
+          dire "{/Le capitaine? Il est plaisant à regarder, n'est-ce pas? Malheureusement pour vous, ce serait une mésalliance, il n'est ni titré ni riche./}";
+          changer relationWM augmente de 1;
+          changer la relationGF diminue de 1;
+          changer l'historique contient "pauvre";
+          changer la relationAS diminue de 1;
+        choix "George Fullers":
+          dire "{/A part lui-même et le jardinage, notre cher comte n'aime parler de rien. Ne le lancez pas sur un de ces sujets, il est intarissable et d'un ennui mortel./}";
+          changer relationWM augmente de 1;
+          changer la relationGF augmente de 1;
+          changer l'historique contient "égocentrique";
+          changer la relationAS diminue de 1;
+        choix "Francis Trenton":
+          dire "{/Un vicomte, voilà qui est intéressant n'est-ce pas? Surtout si on aime l'ennui d'un parfait gentleman tel que le rêve tous les chaperons. Oh et aussi si vous aimez une bourse qui se vide plus vite qu'elle ne se remplit./}";
+          changer relationWM augmente de 1;
+          changer la relationGF diminue de 1;
+          changer l'historique contient "dettes";
+          changer la relationAS diminue de 1;
+        choix "Susan":
+          dire "{/Je ne connais pas cette personne. Oh! quelqu'un m'appelle, veuillez m'excuser./}";
+          changer relationWM diminue de 1;
+        choix "mariage":
+          dire "{/Si je me marie, mon épouse devra assurer une présence lors de nombreuses soirées mondaines. Elle sera en charge de la maisonnée. Oh il est nécessaire qu'elle ait un fort caractère pour ne pas se faire marcher sur les pieds par ma mère, qui résidera avec nous./}";
+			    changer la relationAS diminue de 1;
+			  autre choix:
+			    dire "{/J'ignore peu de choses, mais cela en fait partie./}";
+			    changer la relationAS diminue de 1;
+			fin choisir.
 	   
 	   Son info est "Je connais peu cette personne mais sa cousine, Alexandra Montgomery, peut probablement me parler de son cousin.".
      Interpréter William, sir William et Montgomery comme William Montgomery.
@@ -644,7 +688,22 @@ Sa réaction concernant Francis Trenton, la dette ou les dettes est "{/Un bon ge
   
   Sa réaction concernant enfant ou Susan est "{/Je connais peu cet homme, mais des échos que j'ai eu, cela ne me surprend en rien voyez-vous./}".
 
-Sa réaction est "Vous échangez des banalités.".
+Sa réaction est "Vous échangez sur divers sujets. De qui, ou de quoi, discutez vous?";
+  choisir librement:
+    choix "David Sallister":
+      dire "{/Il aime la stratégie. C'est un ancien camarade de régiment de feu mon mari. Il est très ambitieux. Cela ne m'étonnerait pas qu'il devienne colonel un jour./}";
+      changer l'historique contient "stratégie";
+    choix "Francis Trenton":
+      dire "{/Un bon gentleman paie ses dettes. J'ai le regret de vous dire que le vicomte Trenton n'est pas un gentleman. Il a des dettes. Il me doit de l'argent, parié avec mon défunt mari aux courses de chevaux./}";
+      changer l'historique contient "dettes";
+    choix "dettes":
+      dire "{/Un bon gentleman paie ses dettes. J'ai le regret de vous dire que le vicomte Trenton n'est pas un gentleman. Il a des dettes. Il me doit de l'argent, parié avec mon défunt mari aux courses de chevaux./}";
+      changer l'historique contient "dettes";
+    choix "Susan":
+      dire "{/Je connais peu cet homme, mais des échos que j'ai eu, cela ne me surprend en rien voyez-vous./}";
+    autre choix:
+      dire "{/Cela ne m'intéresse guère./}";
+  fin choisir.
 
 Son info est "{/Je connais peu cette personne./}".
 Interpréter Lady Philipps, Lady Eugenia, Eugenia ou vicomtesse Philipps comme Eugenia Philipps.
