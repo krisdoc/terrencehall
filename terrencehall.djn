@@ -719,7 +719,18 @@ Sa réaction concernant William Montgomery est "{/William est LA référence pou
   
   Sa réaction concernant la dette ou les dettes est "{/Ma foi, quel gentleman n'a pas quelques dettes? Est-ce nécessaire de ruiner la réputation d'un homme pour quelques livres?/}".
 
-Sa réaction est "Vous échangez des banalités.".
+Sa réaction est "Vous échangez sur divers sujets. De qui, ou de quoi, discutez-vous?";
+  choisir librement:
+    choix "William Montgomery":
+      dire "{/William est LA référence pour tout ce qui touche à la mode. Il fait preuve d'un goût exquis en la matière. Oh, et si vous voulez tout savoir sur tout le monde, c'est à lui qu'il faut parler. Il connaît les travers de chacun et ne rechigne pas à les partager. Il paraît qu'il cherche à se marier, mais ma tante n'y croit plus. Entre nous, vu comment il parle de sa future épouse, je pense que ce sera un mariage compliqué./}";
+      changer l'historique contient "mode";
+    choix "Susan":
+      dire "{/Je ne puis croire ce que vous me racontez. Le William que j'aime assumerait les conséquences de ses actes... En même temps, est-ce si surprenant? Il a toujours été réticent à s'engager. Vous m'avez donné matière à réfléchir, ma chère./}";
+    choix "dettes":
+      dire "{/Ma foi, quel gentleman n'a pas quelques dettes? Est-ce nécessaire de ruiner la réputation d'un homme pour quelques livres?/}";
+    autre choix:
+      dire "{/J'ignore tout de cela./}";
+  fin choisir.
 
 Sa réaction concernant un sujet inconnu est "{/J'ignore tout de cela./}".
 
