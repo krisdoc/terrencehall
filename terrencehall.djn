@@ -377,7 +377,24 @@ George Fullers est une personne dans la salle.
 Il est mariable.
 
   Son aperçu est "Le jeune comte Fullers, George de son prénom, se trouve en retrait en train de siroter un verre de Champagne.".
-     Sa réaction est "Vous échangez longuement sur divers sujets.".
+     Sa réaction est "Vous échangez longuement sur divers sujets. De qui, ou de quoi, parlez-vous?";
+     choisir librement:
+      choix "jardinage":
+        dire "{/Le jardinage est une science voyez-vous. Une science subtile que seuls certains peuvent espérer en connaître tous les secrets. Il se trouve que je suis l'une de ces personnes./}";
+        changer relationGF augmente de 2;
+      choix "George Fullers":
+        dire "{/Sans mentir, je suis l'une des personnes les plus intéressantes de cette soirée. Notre hôtesse est bien gentille mais la qualité des invités laisse à désirer. Vous n'êtes pas comprise dans le lot, bien sûr./}";
+        changer relationGF augmente de 2;
+      choix "mariage":
+        dire "{/Ma femme sera libre tant qu'elle ne provoque pas de scandale. Une femme doit être obéissante à son mari et doit le mettre en valeur en toutes circonstances./}";
+      choix "Susan":
+        dire "{/Comme si ce genre d'aventures étaient digne d'intérêt... Allons ma chère, parlons de choses plus intéressantes. Je vous ai parlé du dernier bosquet que j'ai dessiné pour mon jardin d'hiver?/}";
+      choix "dettes":
+        dire "{/Plaie d'argent n'est pas mortelle. La solution est très simple, il n'a qu'à rembourser ses créanciers./}";
+      autre choix:
+        dire "Merci pour cette discussion.";
+      fin choisir.
+     
      Son info est "Je connais peu cette personne. Grand-Mère sait peut-être quelque chose à son sujet.".
      Interpréter comte Fullers, Fullers et George comme George Fullers.
      
@@ -434,7 +451,21 @@ Il est mariable.
  Son nbdansesAS vaut 0.
   Son aperçu est "De la foule sur son 31, une note rouge se détache: il s'agit de l'uniforme de gala du capitaine David Sallister du King's Guard Regiment.".
     Sa description est "Le capitaine ne semble pas très à son aise. Il regarde à droite et à gauche, se cherchant une contenance.".
-	   Sa réaction est "Vous échangez longuement sur divers sujets.".
+	   Sa réaction est "Vous échangez longuement sur divers sujets. De qui, ou de quoi, discutez-vous?";
+	    choisir librement:
+	      choix "stratégie":
+	        dire "{/La stratégie est l'un de mes sujets favori. Voyez-vous, la conduite de la guerre est un art que personne ne peut prétendre maîtriser. Il faut toujours remettre en question ce que l'on croit savoir, car l'ennemi vous surprendra toujours. Il n'y a qu'à voir les méfaits du boucher Bonaparte sur toute l'Europe. Heureusement, Wellington est là./}";
+            changer la relationAS augmente de 2;
+            changer la relationGF diminue de 1;
+        choix "mariage":
+          dire "{/Mon affectation à la garde de notre souverain me laisse peu de temps pour tenir une maison ou un domaine. Mon épouse aura donc la charge complète de la maison. Je vois cette relation comme un partenariat, les deux époux s'épaulant l'un l'autre dans la gestion de la famille. J'entends avoir une grande famille, voyez-vous./}";
+        choix "Susan":
+          dire "{/Cela est tellement inhumain envers l'enfant et sa mère. Un enfant est un cadeau, comment peut-il l'ignorer ainsi? Cela me dépasse./}";
+        choix "dettes":
+          dire "{/S'il me devait cet argent, cela ferait longtemps que je lui en aurai demandé raison, à l'aube et avec chacun un ami proche./}";
+        autre choix:
+          dire "{/J'ignore tout de cela, mais je puis me renseigner./}";
+      fin choisir.
 	   
 	   Son info est "Je connais peu cette personne.".
      Interpréter David, Sallister et capitaine Sallister comme David Sallister.
