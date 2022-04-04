@@ -113,7 +113,7 @@ Sa réaction concernant Violet Brightenberry est "{/C'est une jeune fille bien �
 Sa réaction concernant David Sallister est "{/C'est un parti peu ambitieux. Ses états de service lui font honneur. Son manque de fortune le disqualifie complètement. Il est certes séduisant (oui, j'ai des yeux pour voir), mais ce n'est pas ce qui compte ici. Je crois savoir qu'il veut une grande famille, ce qui réduirait d'autant le train de vie sur la solde d'un simple capitaine./}";
 changer l'historique contient "pauvre".
 
-Sa réaction concernant George Fullers est "{/C'est un parti très prometteur. Je t'invite à te rapprocher de lui. Il possède fortune ET standing. De plus, il a une saine approche de ce qu'est une bonne épouse. Que demander de plus?/}";
+Sa réaction concernant George Fullers est "{/C'est un parti très prometteur. Je vous invite à vous rapprocher de lui. Il possède fortune ET standing. De plus, il a une saine approche de ce qu'est une bonne épouse. Que demander de plus?/}";
 changer l'historique contient "riche".
 
 Sa réaction concernant Francis Trenton est "{/C'est un bon parti. Il est titré et sa fortune semble bien établie. On dit de lui que c'est un parfait gentleman. Ses idées sur le mariage le prouvent./}".
@@ -124,7 +124,30 @@ Sa réaction concernant la dette ou les dettes est "{/Cela est fâcheux, très f
 Sa réaction concernant enfant ou Susan est "{/Nous ne pouvons tolérer qu'un tel scandale éclabousse notre famille. Tenez-vous à l'écart de cet homme./}".
 
 Son info est "Grand-Mère est ma grand-mère paternelle. Elle a à coeur que je trouve un bon parti, riche, si possible, afin de relever la fortune de la famille. Elle est souvent en conflit avec Mère.".
-Sa réaction est "{/Tiens-toi droite et ne parle pas trop./}".
+Sa réaction est "{/Tenez-vous droite et ne parlez pas trop. De qui, ou de quoi, souhaitez-vous discuter?/}";
+  choisir librement:
+    choix "Lady Brightenberry":
+      dire "{/C'est une dame bien comme il faut./}";
+    choix "Violet Brightenberry":
+      dire "{/C'est une jeune fille bien élevée. La côtoyer ne peut vous faire que du bien./}";
+    choix "David Sallister":
+      dire "{/C'est un parti peu ambitieux. Ses états de service lui font honneur. Son manque de fortune le disqualifie complètement. Il est certes séduisant (oui, j'ai des yeux pour voir), mais ce n'est pas ce qui compte ici. Je crois savoir qu'il veut une grande famille, ce qui réduirait d'autant le train de vie sur la solde d'un simple capitaine./}";
+      changer l'historique contient "pauvre";
+    choix "George Fullers":
+      dire "{/C'est un parti très prometteur. Je vous invite à vous rapprocher de lui. Il possède fortune ET standing. De plus, il a une saine approche de ce qu'est une bonne épouse. Que demander de plus?/}";
+      changer l'historique contient "riche";
+    choix "Francis Trenton":
+      dire "{/C'est un bon parti. Il est titré et sa fortune semble bien établie. On dit de lui que c'est un parfait gentleman. Ses idées sur le mariage le prouvent./}";
+    choix "William Montgomery":
+      dire "{/De nombreuses donzelles autour de lui mais aucune n'a réussi à lui mettre le grappin dessus. Il peut faire un bon parti, même si sa fortune n'est pas très importante et qu'il n'est que peu titré. Un troisième choix donc./}";
+    choix "dettes":
+      dire "{/Cela est fâcheux, très fâcheux. Évidemment cela le disqualifie complètement./}";
+    choix "Susan":
+      dire "{/Nous ne pouvons tolérer qu'un tel scandale éclabousse notre famille. Tenez-vous à l'écart de cet homme./}";
+    autre choix:
+      dire "{/Si je ne le sais pas c'est que ce n'est pas très important./}";
+  fin choisir.
+    
  
  après danser avec Grand-Mère:
       dire "{/Merci pour cette danse./}".    
@@ -163,7 +186,7 @@ Violet Brightenberry est une personne dans la salle.
       Son aperçu est "Miss Violet Brightenberry, votre amie de toujours, aide sa mère à accueillir les invités.".
         Sa réaction est "{/ [1ère fois] Je suis ravie que vous soyez là ce soir. A nous deux, on va conquérir cette soirée. Soyez prêts, messieurs! [puis] De qui, ou de quoi, souhaitez-vous que nous parlions?/}";
         choisir librement:
-          choix "David Sallister":
+          choix "David Sallister", "David" ou "capitaine Sallister":
             dire "{/Il est très bel homme, vous ne trouvez pas? Dommage qu'il ne soit pas plus fortuné. Il paraît qu'il laissera sa femme travailler en dehors de la maison. Ce n'est pas très convenable. Ma mère me tuerait si je l'envisageais. Ne lui dites rien./}";
             changer l'historique contient "pauvre";
           choix "George Fullers":
@@ -344,7 +367,7 @@ Son aperçu est "Felicity Trenton est une jeune fille que vous connaissez bien."
 Sa réaction concernant un sujet inconnu est "{/J'ignore tout de cela./}".
 Sa réaction est "De qui, ou de quoi, discutez-vous?";
   choisir librement:
-    choix "Francis Trenton":
+    choix "Francis Trenton", "Francis", "vicomte Trenton" ou "vicomte Francis":
       dire "{/Mon frère est un parfait gentleman. Peut-être pas une personnalité mondaine mais qui il épousera pourra compter sur lui. Il est passionné de chevaux et de courses. Evoquer cela est une façon certaine d'attirer son attention./}";
       changer l'historique contient "courses";
     choix "William Montgomery":
@@ -553,7 +576,7 @@ Il est mariable.
           changer la relationGF augmente de 1;
           changer l'historique contient "égocentrique";
           changer la relationAS diminue de 1;
-        choix "Francis Trenton":
+        choix "Francis Trenton", "Francis", "vicomte Trenton", "Trenton" ou "vicomte Francis":
           dire "{/Un vicomte, voilà qui est intéressant n'est-ce pas? Surtout si on aime l'ennui d'un parfait gentleman tel que le rêve tous les chaperons. Oh et aussi si vous aimez une bourse qui se vide plus vite qu'elle ne se remplit./}";
           changer relationWM augmente de 1;
           changer la relationGF diminue de 1;
