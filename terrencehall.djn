@@ -220,9 +220,9 @@ Lady Brightenberry est une personne dans la salle.
   Son aperçu est "Votre hôte, Lady Brightenberry, se trouve à l'entrée de la salle pour vous souhaiter la bienvenue. Elle entame la conversation avec Grand-Mère.".
     Sa réaction est "{/[1ère fois]Soyez les bienvenues. Lady Wolverton, quelle joie de vous revoir. Et Miss Wolverton. J'espère que vous aimerez cette réunion amicale sans chichis. [2ème fois]J'espère que vous vous amusez. Avez-vous eu l'occasion de goûter les hors d'oeuvres? Ils sont divins.[fin choix] De qui, ou de quoi, souhaitez-vous que nous parlions?/}";
       choisir librement:
-      choix "dettes":
+      choix "dettes" ou "dette":
         dire "{/Je puis vous assurer que ce n'est pas le cas. Lord Brightenberry lui a prêté de l'argent qui lui a été remboursé dans les meilleurs délais./}";
-      choix "Susan":
+      choix "enfant", "bâtard" ou "Susan":
         dire "{/Voilà un sujet qui n'est pas digne de votre attention. Votre mère n'aimerait pas que vous colportiez de telles médisances./}";
       autre choix:
         dire "{/Je suis d'accord avec vous./}";
@@ -251,18 +251,18 @@ Il est mariable.
   Son aperçu est "Un homme dans la trentaine, le vicomte Francis Trenton, est en grande conversation avec sa soeur, Felicity Trenton.".
     Sa réaction est "Vous échangez longuement sur divers sujets. De quoi discutez-vous?";
     choisir librement:
-    choix "courses":
+    choix "courses" ou "course":
       dire "{/Le Derby? Ma foi j'ai plutôt misé sur le bon cheval, je dois dire./}";
       changer relationAT augmente de 2;
-    choix "chevaux":
+    choix "chevaux", "équitation" ou "cheval":
       dire "{/Il n'y a rien que j'aime plus que de monter un cheval tôt le matin pour une longue randonnée sur mes terres./}";
       changer relationAT augmente de 2;
-    choix "dettes":
+    choix "dettes" ou "dette":
       dire "{/Je ne vois pas de quoi vous voulez parler. Changeons de sujet, voulez-vous?/}";
       changer relationAT diminue de 1;
-    choix "mariage":
+    choix "mariage", "se marier", "noces", "fiançailles":
       dire "{/Ce qui compte le plus pour moi est que mon épouse soit heureuse. Pour cela, je la protégerai comme doit le faire tout gentleman qui se respecte./}";
-    choix "Susan":
+    choix "enfant", "bâtard" ou "Susan":
       dire "{/Ce cher William est père? Je l'ignorais. Je dois bien avouer que je n'en suis pas vraiment surpris, il fut une période où il fréquentait assidûment cette modiste, avant de se fournir chez son nouveau tailleur. Tailleur dont il fait la fortune d'ailleurs. Regardez un peu la coupe de son veston de ce soir. Avez-vous déjà vu un meilleur drapé?/}";
     autre choix:
       dire "{/J'ignore tout de cela./}";
@@ -367,13 +367,13 @@ Son aperçu est "Felicity Trenton est une jeune fille que vous connaissez bien."
 Sa réaction concernant un sujet inconnu est "{/J'ignore tout de cela./}".
 Sa réaction est "De qui, ou de quoi, discutez-vous?";
   choisir librement:
-    choix "Francis Trenton", "Francis", "vicomte Trenton" ou "vicomte Francis":
+    choix "Francis Trenton", "frère", "Francis", "vicomte Trenton", "Trenton"," vicomte Francis Trenton", "vicomte" ou "vicomte Francis":
       dire "{/Mon frère est un parfait gentleman. Peut-être pas une personnalité mondaine mais qui il épousera pourra compter sur lui. Il est passionné de chevaux et de courses. Evoquer cela est une façon certaine d'attirer son attention./}";
       changer l'historique contient "courses";
-    choix "William Montgomery":
+    choix "William Montgomery", "William", "Montgomery", "sir William","sir", "sir Montgomery" ou "sir William Montgomery":
       dire "{/Il se murmure que sir William n'est pas le gentleman qu'il paraît. Il se dit qu'il aurait eu un enfant caché avec Susan, une couturière de ma modiste. Elle semblait avoir pris du poids puis a été licenciée. Elle est désormais sans le sou puisqu'il a refusé de subvenir à ses besoins et à ceux de l'enfant./}";
       changer l'historique contient "enfant";
-    choix "dettes":
+    choix "dettes" ou "dette":
       dire "{/Francis? Endetté? Je ne peux y croire... Vraiment? Mais alors, fuyez! Je sais que votre famille est, comment dire, un peu en recherche, de... d'un bon parti, voilà. Cela vous ferait grand tort, je le crains. Je ne puis le souffrir./}";
       changer la relationAT diminue de 5;
     fin choisir.
@@ -402,17 +402,17 @@ Il est mariable.
   Son aperçu est "Le jeune comte Fullers, George de son prénom, se trouve en retrait en train de siroter un verre de Champagne.".
      Sa réaction est "Vous échangez longuement sur divers sujets. De qui, ou de quoi, parlez-vous?";
      choisir librement:
-      choix "jardinage":
+      choix "jardinage", "jardiner", "jardins" ou "jardin":
         dire "{/Le jardinage est une science voyez-vous. Une science subtile que seuls certains peuvent espérer en connaître tous les secrets. Il se trouve que je suis l'une de ces personnes./}";
         changer relationGF augmente de 2;
-      choix "George Fullers":
+      choix "George Fullers", "comte Fullers", "Fullers", "George", "comte" ou "comte George Fullers":
         dire "{/Sans mentir, je suis l'une des personnes les plus intéressantes de cette soirée. Notre hôtesse est bien gentille mais la qualité des invités laisse à désirer. Vous n'êtes pas comprise dans le lot, bien sûr./}";
         changer relationGF augmente de 2;
-      choix "mariage":
+      choix "mariage", "femme", "se marier", "épouse" ou "femmes":
         dire "{/Ma femme sera libre tant qu'elle ne provoque pas de scandale. Une femme doit être obéissante à son mari et doit le mettre en valeur en toutes circonstances./}";
-      choix "Susan":
+      choix "enfant", "bâtard" ou "Susan":
         dire "{/Comme si ce genre d'aventures étaient digne d'intérêt... Allons ma chère, parlons de choses plus intéressantes. Je vous ai parlé du dernier bosquet que j'ai dessiné pour mon jardin d'hiver?/}";
-      choix "dettes":
+      choix "dettes" ou "dette":
         dire "{/Plaie d'argent n'est pas mortelle. La solution est très simple, il n'a qu'à rembourser ses créanciers./}";
       autre choix:
         dire "Merci pour cette discussion.";
@@ -476,15 +476,15 @@ Il est mariable.
     Sa description est "Le capitaine ne semble pas très à son aise. Il regarde à droite et à gauche, se cherchant une contenance.".
 	   Sa réaction est "Vous échangez longuement sur divers sujets. De qui, ou de quoi, discutez-vous?";
 	    choisir librement:
-	      choix "stratégie":
+	      choix "stratégie", "stratège", "guerre", "bataille", "tactique" ou "armée":
 	        dire "{/La stratégie est l'un de mes sujets favori. Voyez-vous, la conduite de la guerre est un art que personne ne peut prétendre maîtriser. Il faut toujours remettre en question ce que l'on croit savoir, car l'ennemi vous surprendra toujours. Il n'y a qu'à voir les méfaits du boucher Bonaparte sur toute l'Europe. Heureusement, Wellington est là./}";
             changer la relationAS augmente de 2;
             changer la relationGF diminue de 1;
-        choix "mariage":
+        choix "mariage", "femme", "se marier", "épouse" ou "femmes":
           dire "{/Mon affectation à la garde de notre souverain me laisse peu de temps pour tenir une maison ou un domaine. Mon épouse aura donc la charge complète de la maison. Je vois cette relation comme un partenariat, les deux époux s'épaulant l'un l'autre dans la gestion de la famille. J'entends avoir une grande famille, voyez-vous./}";
-        choix "Susan":
+        choix "enfant", "bâtard" ou "Susan":
           dire "{/Cela est tellement inhumain envers l'enfant et sa mère. Un enfant est un cadeau, comment peut-il l'ignorer ainsi? Cela me dépasse./}";
-        choix "dettes":
+        choix "dettes" ou "dette":
           dire "{/S'il me devait cet argent, cela ferait longtemps que je lui en aurai demandé raison, à l'aube et avec chacun un ami proche./}";
         autre choix:
           dire "{/J'ignore tout de cela, mais je puis me renseigner./}";
@@ -549,7 +549,7 @@ Il est mariable.
   Son aperçu est "Une danse s'achève, les danseurs se saluent. Un dandy attire tous les regards, il s'agit de sir William Montgomery.".
 	   Sa réaction est "Vous échangez longuement sur divers sujets. De qui, ou de quoi, discutez-vous?";
 	    choisir librement:
-	      choix "mode":
+	      choix "mode", "s'habiller" ou "vêtements":
 	        dire "{/Il y a beaucoup à déduire de la manière dont se vêt une personne de qualité. De manière inconsciente, elle exprime qui elle est, ce qui compte pour elle. Je n'ai que peu de respect pour quelqu'un qui a les moyens mais ne suit pas la mode du moment. C'est comme un pied de nez à toutes les conventions sociales de notre milieu. Mais cela nous procure l'occasion de médire les uns des autres, alors ce n'est pas si grave. [si le joueur porte la robe verte et le pendentif]Fort heureusement, vous faites preuve d'un oeil acéré pour ce qui touche à la parure./} [si le joueur porte la robe bleue et le pendentif]Il regarde votre tenue d'un air entendu.[fin si]";
           changer relationWM augmente de 2;
           changer la relationGF diminue de 1;
@@ -559,33 +559,33 @@ Il est mariable.
           changer relationWM augmente de 1;
           changer la relationGF diminue de 1;
           changer la relationAS diminue de 1;
-        choix "Violet Brightenberry":
+        choix "Violet Brightenberry", "Violet", "Miss Brightenberry", "Miss Violet" ou "Miss Violet Brightenberry":
           dire "{/Une charmante jeune fille. Un parti idéal pour qui n'aime pas être contredit par son épouse, ou que celle-ci ait ses propres intérêts à coeur./}";
           changer relationWM augmente de 1;
           changer la relationGF diminue de 1;
           changer la relationAS diminue de 1;
-        choix "David Sallister":
+        choix "David", "Sallister", "capitaine Sallister", "capitaine David Sallister", "capitaine" ou "David Sallister" :
           dire "{/Le capitaine? Il est plaisant à regarder, n'est-ce pas? Malheureusement pour vous, ce serait une mésalliance, il n'est ni titré ni riche./}";
           changer relationWM augmente de 1;
           changer la relationGF diminue de 1;
           changer l'historique contient "pauvre";
           changer la relationAS diminue de 1;
-        choix "George Fullers":
+        choix "George Fullers", "comte Fullers", "Fullers", "George", "comte" ou "comte George Fullers":
           dire "{/A part lui-même et le jardinage, notre cher comte n'aime parler de rien. Ne le lancez pas sur un de ces sujets, il est intarissable et d'un ennui mortel./}";
           changer relationWM augmente de 1;
           changer la relationGF augmente de 1;
           changer l'historique contient "égocentrique";
           changer la relationAS diminue de 1;
-        choix "Francis Trenton", "Francis", "vicomte Trenton", "Trenton" ou "vicomte Francis":
+        choix "Francis Trenton", "Francis", "vicomte Trenton", "Trenton"," vicomte Francis Trenton", "vicomte" ou "vicomte Francis":
           dire "{/Un vicomte, voilà qui est intéressant n'est-ce pas? Surtout si on aime l'ennui d'un parfait gentleman tel que le rêve tous les chaperons. Oh et aussi si vous aimez une bourse qui se vide plus vite qu'elle ne se remplit./}";
           changer relationWM augmente de 1;
           changer la relationGF diminue de 1;
           changer l'historique contient "dettes";
           changer la relationAS diminue de 1;
-        choix "Susan":
+        choix "enfant", "bâtard" ou "Susan":
           dire "{/Je ne connais pas cette personne. Oh! quelqu'un m'appelle, veuillez m'excuser./}";
           changer relationWM diminue de 1;
-        choix "mariage":
+        choix "mariage", "femme", "se marier", "épouse" ou "femmes":
           dire "{/Si je me marie, mon épouse devra assurer une présence lors de nombreuses soirées mondaines. Elle sera en charge de la maisonnée. Oh il est nécessaire qu'elle ait un fort caractère pour ne pas se faire marcher sur les pieds par ma mère, qui résidera avec nous./}";
 			    changer la relationAS diminue de 1;
 			  autre choix:
@@ -713,16 +713,16 @@ Sa réaction concernant Francis Trenton, la dette ou les dettes est "{/Un bon ge
 
 Sa réaction est "Vous échangez sur divers sujets. De qui, ou de quoi, discutez vous?";
   choisir librement:
-    choix "David Sallister":
+    choix "David", "Sallister", "capitaine Sallister", "capitaine David Sallister", "capitaine" ou "David Sallister" :
       dire "{/Il aime la stratégie. C'est un ancien camarade de régiment de feu mon mari. Il est très ambitieux. Cela ne m'étonnerait pas qu'il devienne colonel un jour./}";
       changer l'historique contient "stratégie";
-    choix "Francis Trenton":
+    choix "Francis Trenton", "Francis", "vicomte Trenton", "Trenton"," vicomte Francis Trenton", "vicomte" ou "vicomte Francis":
       dire "{/Un bon gentleman paie ses dettes. J'ai le regret de vous dire que le vicomte Trenton n'est pas un gentleman. Il a des dettes. Il me doit de l'argent, parié avec mon défunt mari aux courses de chevaux./}";
       changer l'historique contient "dettes";
-    choix "dettes":
+    choix "dettes" ou "dette":
       dire "{/Un bon gentleman paie ses dettes. J'ai le regret de vous dire que le vicomte Trenton n'est pas un gentleman. Il a des dettes. Il me doit de l'argent, parié avec mon défunt mari aux courses de chevaux./}";
       changer l'historique contient "dettes";
-    choix "Susan":
+    choix "enfant", "bâtard" ou "Susan":
       dire "{/Je connais peu cet homme, mais des échos que j'ai eu, cela ne me surprend en rien voyez-vous./}";
     autre choix:
       dire "{/Cela ne m'intéresse guère./}";
@@ -744,12 +744,12 @@ Sa réaction concernant William Montgomery est "{/William est LA référence pou
 
 Sa réaction est "Vous échangez sur divers sujets. De qui, ou de quoi, discutez-vous?";
   choisir librement:
-    choix "William Montgomery":
+    choix "William Montgomery", "William", "Montgomery", "sir William","sir", "sir Montgomery" ou "sir William Montgomery":
       dire "{/William est LA référence pour tout ce qui touche à la mode. Il fait preuve d'un goût exquis en la matière. Oh, et si vous voulez tout savoir sur tout le monde, c'est à lui qu'il faut parler. Il connaît les travers de chacun et ne rechigne pas à les partager. Il paraît qu'il cherche à se marier, mais ma tante n'y croit plus. Entre nous, vu comment il parle de sa future épouse, je pense que ce sera un mariage compliqué./}";
       changer l'historique contient "mode";
-    choix "Susan":
+    choix "enfant", "bâtard" ou "Susan":
       dire "{/Je ne puis croire ce que vous me racontez. Le William que j'aime assumerait les conséquences de ses actes... En même temps, est-ce si surprenant? Il a toujours été réticent à s'engager. Vous m'avez donné matière à réfléchir, ma chère./}";
-    choix "dettes":
+    choix "dettes" ou "dette":
       dire "{/Ma foi, quel gentleman n'a pas quelques dettes? Est-ce nécessaire de ruiner la réputation d'un homme pour quelques livres?/}";
     autre choix:
       dire "{/J'ignore tout de cela./}";
