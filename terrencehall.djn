@@ -36,9 +36,7 @@ La chambre est un lieu. "Vous voici dans votre chambre.".
 -- La coiffeuse
   La coiffeuse est un support dans la chambre.
   
-  L'éventail est un objet sur la coiffeuse. "C'est un éventail simple orné de plumes blanches.".
-  
-  Le collier est un vêtement sur la coiffeuse. "Ce collier de perles vous a été transmis par votre mère lors de votre présentation comme débutante devant la reine Charlotte.".
+   Le collier est un vêtement sur la coiffeuse. "Ce collier de perles vous a été transmis par votre mère lors de votre présentation comme débutante devant la reine Charlotte.".
     Son info est "c'est le collier de perles que Mère m'a offert.".
      
   Le pendentif est un vêtement sur la coiffeuse. "C'est une petite émeraude sur une monture en argent. Ce pendentif vous a été offert par votre père pour votre anniversaire. C'est la dernière fois que vous l'avez vu.".
