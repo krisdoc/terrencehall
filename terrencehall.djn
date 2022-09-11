@@ -128,21 +128,21 @@ Sa réaction est "{/Tenez-vous droite et ne parlez pas trop. De qui, ou de quoi,
   choisir librement:
     choix "Lady Brightenberry":
       dire "{/C'est une dame bien comme il faut./}";
-    choix "Violet Brightenberry":
+    choix "Violet Brightenberry", "Violet", "Miss Brightenberry", "Miss Violet" ou "Miss Violet Brightenberry":
       dire "{/C'est une jeune fille bien élevée. La côtoyer ne peut vous faire que du bien./}";
-    choix "David Sallister":
+    choix "David", "Sallister", "capitaine Sallister", "capitaine David Sallister", "capitaine" ou "David Sallister" :
       dire "{/C'est un parti peu ambitieux. Ses états de service lui font honneur. Son manque de fortune le disqualifie complètement. Il est certes séduisant (oui, j'ai des yeux pour voir), mais ce n'est pas ce qui compte ici. Je crois savoir qu'il veut une grande famille, ce qui réduirait d'autant le train de vie sur la solde d'un simple capitaine./}";
       changer l'historique contient "pauvre";
-    choix "George Fullers":
+    choix "George Fullers", "comte Fullers", "Fullers", "George", "comte" ou "comte George Fullers":
       dire "{/C'est un parti très prometteur. Je vous invite à vous rapprocher de lui. Il possède fortune ET standing. De plus, il a une saine approche de ce qu'est une bonne épouse. Que demander de plus?/}";
       changer l'historique contient "riche";
-    choix "Francis Trenton":
+    choix "Francis Trenton", "Francis", "vicomte Trenton", "Trenton"," vicomte Francis Trenton", "vicomte" ou "vicomte Francis":
       dire "{/C'est un bon parti. Il est titré et sa fortune semble bien établie. On dit de lui que c'est un parfait gentleman. Ses idées sur le mariage le prouvent./}";
-    choix "William Montgomery":
+    choix "William Montgomery", "William", "Montgomery", "sir William","sir", "sir Montgomery" ou "sir William Montgomery":
       dire "{/De nombreuses donzelles autour de lui mais aucune n'a réussi à lui mettre le grappin dessus. Il peut faire un bon parti, même si sa fortune n'est pas très importante et qu'il n'est que peu titré. Un troisième choix donc./}";
-    choix "dettes":
+    choix "dette" ou "dettes":
       dire "{/Cela est fâcheux, très fâcheux. Évidemment cela le disqualifie complètement./}";
-    choix "Susan":
+    choix "enfant", "bâtard" ou "Susan":
       dire "{/Nous ne pouvons tolérer qu'un tel scandale éclabousse notre famille. Tenez-vous à l'écart de cet homme./}";
     autre choix:
       dire "{/Si je ne le sais pas c'est que ce n'est pas très important./}";
@@ -186,15 +186,15 @@ Violet Brightenberry est une personne dans la salle.
       Son aperçu est "Miss Violet Brightenberry, votre amie de toujours, aide sa mère à accueillir les invités.".
         Sa réaction est "{/ [1ère fois] Je suis ravie que vous soyez là ce soir. A nous deux, on va conquérir cette soirée. Soyez prêts, messieurs! [puis] De qui, ou de quoi, souhaitez-vous que nous parlions?/}";
         choisir librement:
-          choix "David Sallister", "David" ou "capitaine Sallister":
+          choix "David", "Sallister", "capitaine Sallister", "capitaine David Sallister", "capitaine" ou "David Sallister" :
             dire "{/Il est très bel homme, vous ne trouvez pas? Dommage qu'il ne soit pas plus fortuné. Il paraît qu'il laissera sa femme travailler en dehors de la maison. Ce n'est pas très convenable. Ma mère me tuerait si je l'envisageais. Ne lui dites rien./}";
             changer l'historique contient "pauvre";
-          choix "George Fullers":
+          choix "George Fullers", "comte Fullers", "Fullers", "George", "comte" ou "comte George Fullers":
             dire "{/J'ai eu du mal à lui échapper. Il est d'un ennui... Il ne parle que de jardinage. Il a conseillé Maman pour le nouveau dessin de nos bosquets, il était intarissable. Vous lui parlez à vos risques et périls, ma chère./}";
             changer l'historique contient "jardinage";
-          choix "Susan":
+          choix "enfant", "bâtard" ou "Susan":
             dire "{/Oh? J'adore un bon ragot comme n'importe qui mais je plains cette Susan./}";
-          choix "dettes":
+          choix "dettes" ou "dette":
             dire "{/Pauvre Felicity. Je ne comprends pas comment elle peut ne pas réprimander son frère pour son comportement. J'imagine que sa dot sera petite. Cela ne va pas l'aider à se marier, si ça se sait./}";
           autre choix:
             dire "{/Je connais peu cette personne, peut-être que quelqu'un d'autre pourra vous renseigner./}";
@@ -881,3 +881,4 @@ exécuter afficher ceci:
     dire "[sorties ici]";
   fin si.
 
+ 
